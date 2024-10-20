@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import "./SkilsCard.css";
-function SkilsCard({ skillImg }) {
+function SkilsCard({ skillImg , skillname}) {
   return (
     <>
       <motion.div
@@ -11,6 +11,7 @@ function SkilsCard({ skillImg }) {
       >
         <div className="skill-container">
           <img className="skill-img" src={skillImg} />
+          <p className="skill-name">{skillname}</p>
         </div>
       </motion.div>
     </>

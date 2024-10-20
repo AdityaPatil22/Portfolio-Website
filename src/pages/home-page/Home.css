@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.home-main-container p{
+.home-main-container p {
   font-size: 20px;
   font-family: "Red Hat Mono", monospace;
 }
@@ -17,10 +17,9 @@
   width: 400px;
   border-radius: 50%;
   margin-bottom: 20px;
-
 }
 
-.name{
+.name {
   font-family: "Kaushan Script", cursive;
   margin-bottom: 30px;
   font-size: 70px;
@@ -33,35 +32,38 @@
   transform: rotate(-5deg);
 }
 
-.name span::before{
+.name span::before {
   position: absolute;
   top: 40px;
   left: 0;
   width: 30px;
   height: 4px;
-  content: '';
+  content: "";
   background: #000000;
   margin-left: -40px;
 }
 
-.name span::after{
+.name span::after {
   position: absolute;
   top: 40px;
   right: 0;
   width: 30px;
   height: 4px;
-  content: '';
+  content: "";
   background: #000000;
   margin-right: -40px;
 }
 
-
-@media screen  and (max-width: 480px) {
-  .name{
+@media screen and (max-width: 480px) {
+  .name {
     font-size: 50px;
   }
 
-  .home-main-container p{
+  .home-main-container {
+    margin: 50px 0 50px 0;
+  }
+
+  .home-main-container p {
     font-size: 15px;
   }
 
@@ -70,5 +72,3 @@
     height: 300px;
   }
 }
-
-

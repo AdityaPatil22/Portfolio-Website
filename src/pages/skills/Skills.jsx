@@ -24,26 +24,26 @@ import "./Skills.css";
 
 function Skills() {
   const skills = [
-    Html,
-    Css,
-    JavaScript,
-    Bootstrap,
-    Tailwind,
-    React,
-    Vue,
-    Angular,
-    Nuxt,
-    Express,
-    Node,
-    MySql,
-    MongoDB,
-    Git,
-    GitBash,
-    Java,
-    Cloud,
-    Figma,
-    Linux,
-    ESlint,
+    { name: "HTML", image: Html },
+    { name: "CSS", image: Css },
+    { name: "JavaScript", image: JavaScript },
+    { name: "Bootstrap", image: Bootstrap },
+    { name: "Tailwind", image: Tailwind },
+    { name: "React", image: React },
+    { name: "Vue", image: Vue },
+    { name: "Angular", image: Angular },
+    { name: "Nuxt", image: Nuxt },
+    { name: "Express", image: Express },
+    { name: "Node", image: Node },
+    { name: "MySQL", image: MySql },
+    { name: "MongoDB", image: MongoDB },
+    { name: "Git", image: Git },
+    { name: "GitBash", image: GitBash },
+    { name: "Java", image: Java },
+    { name: "Cloud", image: Cloud },
+    { name: "Figma", image: Figma },
+    { name: "Linux", image: Linux },
+    { name: "ESLint", image: ESlint },
   ];
 
   return (
@@ -51,10 +51,14 @@ function Skills() {
       <div id="skills">
         <Heading title="Skills" />
       </div>
-      <div className="skill-main-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-        {skills.map((skill) => {
-          return <SkilsCard key={skill.id} skillImg={skill} />;
-        })}
+      <div className="skill-main-container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+        {skills.map((skill, index) => (
+          <SkilsCard
+            key={index}
+            skillImg={skill.image}
+            skillname={skill.name}
+          />
+        ))}
       </div>
     </>
   );

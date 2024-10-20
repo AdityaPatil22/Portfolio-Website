@@ -1,78 +1,67 @@
 .about-container {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 120px;
-    font-family: "Red Hat Mono", monospace;
-    font-optical-sizing: auto;
+  margin-bottom: 50px;
+  display: flex;
+  padding: 0px 120px;
+  font-family: "Red Hat Mono", monospace;
+  font-optical-sizing: auto;
+  width: 100%;
+}
+
+.about-left-container {
+  height: auto;
+  width: 30%;
+}
+
+.info-container {
+  display: flex;
+  margin: 10px 0px;
+  font-size: 16px;
+}
+
+.info-text {
+  font-weight: 500;
+}
+
+.about-right-container {
+  height: auto;
+  width: 70%;
+  text-align: justify;
+}
+
+.hello-heading {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.about-description {
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.focus-cards-container {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1380px) {
+  .about-container {
+    flex-direction: column;
+    padding: 50px;
   }
-  
+
   .about-left-container {
-    height: auto;
-    width: 30%;
+    width: 100%;
   }
-  
-  .info-container {
-    display: flex;
-    margin: 10px 0px;
-    font-size: 20px;
-    
-  }
-  
-  .info-text{
-    font-weight: 500;
-  }
-  
+
   .about-right-container {
     height: auto;
-    width: 70%;
-    text-align: justify; 
+    width: 100%;
+    margin-top: 30px;
   }
-  
-  .hello-heading {
-    font-size: 35px;
-    margin-bottom: 20px;
-    font-weight: 500;
-  }
-  
-  .about-description{
-    font-size: 22px;
-    line-height: 35px;
-  }
-  
-  .focus-cards-container{
-    margin-top: 50px;
-  }
+}
 
-  @media screen  and (max-width: 1380px) {
-    .about-container {
-      flex-direction: column;
-      padding: 50px;
-    }
-
-    .about-left-container {
-      height: auto;
-      width: 100%;
-    }
-
-    .about-right-container {
-      height: auto;
-      width: 100%;
-      margin-top: 30px;
-    }
-
-    
+@media screen and (max-width: 1380px) {
+  .focus-cards-container {
+    padding: 0px 30px;
   }
-
-  @media screen  and (max-width: 1380px) {
-    .focus-cards-container{
-      padding: 0px 30px;
-    }
-  }
-
-  @media screen   and (max-width: 496px) {
-    .info-container{
-      flex-direction: column;
-    }
-  }
+}
