@@ -9,7 +9,7 @@ import "./Experience.css";
 function Experience() {
   const data = [
     {
-      title: "Software Developer",
+      title: "Associate Software Engineer",
       content: (
         <div>
           <ul className="list-disc list-outside font-normal mb-8 ">

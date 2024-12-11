@@ -33,10 +33,6 @@ function About() {
             <p className="info-details">&nbsp; Aditya Patil</p>
           </div>
           <div className="info-container">
-            <p className="info-text">Phone :</p>
-            <p className="info-details">&nbsp; 9145015729</p>
-          </div>
-          <div className="info-container">
             <p className="info-text">Email :</p>
             <p className="info-details">&nbsp; adityapatil7649@gmail.com</p>
           </div>

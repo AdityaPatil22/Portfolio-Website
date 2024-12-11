@@ -14,7 +14,7 @@ function Home() {
           <h1 className="name">
             <span>Aditya Patil</span>
           </h1>
-          <p>FullStack Web Developer</p>
+          <p>Associate Software Engineer</p>
         </div>
       </div>
       <div id="about-me">

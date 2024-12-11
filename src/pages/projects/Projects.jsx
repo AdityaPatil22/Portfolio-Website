@@ -12,7 +12,7 @@ function Projects() {
   return (
     <>
       <div id="projects">
-        <Heading title="Personal Projects" />
+        <Heading title="Projects" />
       </div>
 
       <div className="projects-main-container">
@@ -31,7 +31,7 @@ function Projects() {
           />
         </a>
 
-        <a href="https://app.netlify.com/sites/sweetspot-shop/overview">
+        <a href="https://sweets-spot.netlify.app/">
           <Card
             projectTitle="SweetSpot"
             projectDescription="Developed a fully functional vacation rental website using the MERN stack, featuring property listings, booking management, and user authentication."
