@@ -35,7 +35,7 @@ export function FocusCards({ cards }) {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-5xl mx-auto  w-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto w-full">
       {cards.map((card, index) => (
         <Card
           key={card.title}

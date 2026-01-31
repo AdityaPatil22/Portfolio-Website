@@ -1,7 +1,7 @@
 import "./Home.css";
 
 import Heading from "../../components/heading/Heading";
-import Profile from "../../assets/profile-pic.jpg";
+import Profile from "../../assets/profile-pic.jpeg";
 
 function Home() {
   return (

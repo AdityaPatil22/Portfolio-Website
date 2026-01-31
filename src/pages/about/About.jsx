@@ -2,28 +2,23 @@ import { FocusCards } from "../../components/ui/focus-cards";
 import "./About.css";
 
 function About() {
-    const cards = [
-        {
-          title: "Linkedin",
-          src: "https://i.pinimg.com/736x/0c/78/d0/0c78d03cbfa19d5f3d7ad1b6e49f957b.jpg",
-          url: "https://www.linkedin.com/in/aditya-patil-596413223/",
-        },
-        {
-          title: "Github",
-          src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BIlB_ercdvTO34Lq4zm2pPbCXO9lvMOplg&s",
-          url: "https://github.com/AdityaP7649",
-        },
-        {
-          title: "GeeksforGeeks",
-          src: "https://play-lh.googleusercontent.com/ZI21NMObsjB7DbPU_EXRymHJL3HQpfsrB2N4CWb-diXm4xjl_13mmetYQZvcpgGf-64",
-          url: "https://auth.geeksforgeeks.org/user/adityapatil7649/practice",
-        },
-        {
-          title: "Google Cloud",
-          src: "https://1000logos.net/wp-content/uploads/2020/05/Emblem-Google-Cloud.jpg",
-          url: "https://www.cloudskillsboost.google/public_profiles/e8672de8-0a5a-4137-b88c-877211a0e486",
-        },
-      ];
+  const cards = [
+    {
+      title: "Linkedin",
+      src: "https://i.pinimg.com/736x/0c/78/d0/0c78d03cbfa19d5f3d7ad1b6e49f957b.jpg",
+      url: "https://www.linkedin.com/in/aditya-patil-596413223/",
+    },
+    {
+      title: "Github",
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BIlB_ercdvTO34Lq4zm2pPbCXO9lvMOplg&s",
+      url: "https://github.com/AdityaPatil22",
+    },
+    {
+      title: "Leetcode",
+      src: "https://cdn-1.webcatalog.io/catalog/leetcode/leetcode-icon-filled-256.png?v=1714774949349",
+      url: "https://leetcode.com/u/aditya1592/",
+    },
+  ];
   return (
     <>
       <div className="about-container">
@@ -40,26 +35,26 @@ function About() {
         <div className="about-right-container">
           <h1 className="hello-heading">Hello There!</h1>
           <p className="about-description">
-            Enthusiastic Full Stack Web Developer with a strong passion for
-            crafting modern, user-centric web applications. I bring a proven
-            track record in designing, developing, and maintaining both
-            front-end and back-end components of web solutions. Proficient in
-            the MERN stack (MongoDB, Express.js, React.js, Node.js)
+            Full-stack web developer, building scalable, accessible, and
+            production-grade web experiences with a strong focus on quality,
+            performance, and real-world impact.
             <br />
-            <br /> I excel at building scalable, high-performance web
-            applications. My technical toolkit includes extensive experience
-            with HTML, CSS, JavaScript, and Bootstrap, enabling me to create
-            visually appealing and responsive user interfaces. In addition to my
-            front-end and back-end development skills, I have a solid foundation
-            in database management with hands-on expertise in both MySQL and
-            MongoDB.
+            <br /> I work across the stack—designing and developing modern
+            front-end interfaces, integrating robust back-end services, and
+            collaborating closely with cross-functional teams to deliver
+            reliable solutions. My experience spans JavaScript-driven
+            ecosystems, component-based UI development, API integration, and
+            working with containerized environments in enterprise-grade
+            workflows.
             <br />
-            <br /> My approach combines a keen eye for detail with a commitment
-            to writing clean, efficient, and maintainable code. I am highly
-            motivated and results-driven, consistently striving for excellence
-            in every project. My goal is to leverage my skills and enthusiasm to
-            contribute to impactful web solutions that exceed user expectations
-            and drive business success.
+            <br /> I have a solid foundation in web fundamentals (HTML, CSS,
+            JavaScript) and hands-on experience with modern frameworks and
+            tooling, along with databases like MySQL and MongoDB. Over time,
+            I’ve grown a strong appreciation for clean architecture,
+            accessibility, maintainability, and developer experience—principles
+            that guide how I write and review code. Curious by nature,
+            detail-oriented, and driven by problem-solving—always looking to
+            build things that matter and scale.
           </p>
         </div>
       </div>
