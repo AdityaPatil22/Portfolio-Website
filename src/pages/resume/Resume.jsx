@@ -1,29 +1,96 @@
 import { motion } from "framer-motion";
+import { Download, ExternalLink, Briefcase, GraduationCap, Award } from "lucide-react";
 import Heading from "../../components/heading/Heading";
 import "./Resume.css";
 
 function Resume() {
+  const highlights = [
+    {
+      icon: <Briefcase size={24} />,
+      title: "Experience",
+      value: "2+ Years",
+      description: "Professional development experience",
+    },
+    {
+      icon: <GraduationCap size={24} />,
+      title: "Education",
+      value: "B.Tech",
+      description: "Computer Science & Engineering",
+    },
+    {
+      icon: <Award size={24} />,
+      title: "Projects",
+      value: "10+",
+      description: "Completed web applications",
+    },
+  ];
+
   return (
     <>
       <div id="resume">
         <Heading title="Resume" />
       </div>
+
       <div className="resume-container">
         <motion.div
-          className="box"
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          className="resume-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          {" "}
-          <a href="https://aditya-patil-resume.my.canva.site/">
-            <button
-              type="button"
-              className="py-10 px-20 me-2 mb-2 text-xl font-large text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 z-20"
+          <div className="resume-intro">
+            <h2 className="resume-title">Aditya Patil</h2>
+            <p className="resume-subtitle">Full Stack Developer</p>
+            <p className="resume-description">
+              Passionate about building scalable web applications with modern
+              technologies. Experienced in React, Vue, Angular, Node.js, and
+              cloud platforms.
+            </p>
+          </div>
+
+          <div className="resume-highlights">
+            {highlights.map((item, index) => (
+              <motion.div
+                key={index}
+                className="highlight-card"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="highlight-icon">{item.icon}</div>
+                <div className="highlight-info">
+                  <span className="highlight-value">{item.value}</span>
+                  <span className="highlight-title">{item.title}</span>
+                  <span className="highlight-desc">{item.description}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="resume-actions">
+            <motion.a
+              href="https://aditya-patil-resume.my.canva.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-btn primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Download Resume
-            </button>
-          </a>
+              <ExternalLink size={20} />
+              View Resume
+            </motion.a>
+            <motion.a
+              href="https://aditya-patil-resume.my.canva.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-btn secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download size={20} />
+              Download PDF
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </>

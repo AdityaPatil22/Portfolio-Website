@@ -17,9 +17,6 @@ function Home() {
           <p>Associate Software Engineer</p>
         </div>
       </div>
-      <div id="about-me">
-        <Heading title="About Me" />
-      </div>
     </>
   );
 }

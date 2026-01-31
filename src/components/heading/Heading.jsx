@@ -1,12 +1,10 @@
 import "./Heading.css";
 
-function Heading({ title, titleid }) {
+function Heading({ title, titleId }) {
   return (
-    <>
-      <div id={titleid}>
-        <h1 className="scetion-heading">{title}</h1>
-      </div>
-    </>
+    <div id={titleId}>
+      <h1 className="section-heading">{title}</h1>
+    </div>
   );
 }
 

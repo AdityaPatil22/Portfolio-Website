@@ -1,12 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Menu, MenuItem, ProductItem } from "../../components/ui/navbar-menu";
-import AboutImg from "../../assets/navbar-images/about.png";
-import ExperienceImg from "../../assets/navbar-images/experience.png";
-import ProjectImg from "../../assets/navbar-images/project.png";
-import SkillsImg from "../../assets/navbar-images/skills.png";
-import ResumeImg from "../../assets/navbar-images/Resume.png";
-
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -18,8 +11,8 @@ const Navbar = () => {
         <MenuItem setActive={setActiveItem} active={activeItem} item="About">
           <ProductItem
             title="About"
+            description="Learn more about me"
             href="/"
-            src={AboutImg}
           />
         </MenuItem>
         <MenuItem
@@ -29,33 +22,36 @@ const Navbar = () => {
         >
           <ProductItem
             title="Experience"
-            description=""
+            description="My professional journey"
             href="/experience"
-            src={ExperienceImg}
           />
         </MenuItem>
         <MenuItem setActive={setActiveItem} active={activeItem} item="Projects">
           <ProductItem
             title="Projects"
-            description=""
+            description="What I've built"
             href="/projects"
-            src={ProjectImg}
           />
         </MenuItem>
         <MenuItem setActive={setActiveItem} active={activeItem} item="Skills">
           <ProductItem
             title="Skills"
-            description=""
+            description="Technologies I use"
             href="/skills"
-            src={SkillsImg}
           />
         </MenuItem>
         <MenuItem setActive={setActiveItem} active={activeItem} item="Resume">
           <ProductItem
             title="Resume"
-            description=""
+            description="Download my resume"
             href="/resume"
-            src={ResumeImg}
+          />
+        </MenuItem>
+        <MenuItem setActive={setActiveItem} active={activeItem} item="Contact">
+          <ProductItem
+            title="Contact"
+            description="Get in touch"
+            href="/contact"
           />
         </MenuItem>
       </Menu>

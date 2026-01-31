@@ -57,16 +57,18 @@ export const Menu = ({ setActive, children }) => {
 
 export const ProductItem = ({ title, description, href, src }) => {
   return (
-    <Link to={href} className="flex space-x-2">
-      <img
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white mt-4">
+    <Link to={href} className="flex space-x-2 items-center">
+      {src && (
+        <img
+          src={src}
+          width={140}
+          height={70}
+          alt={title}
+          className="flex-shrink-0 rounded-md shadow-2xl"
+        />
+      )}
+      <div className={src ? "" : "py-2"}>
+        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">

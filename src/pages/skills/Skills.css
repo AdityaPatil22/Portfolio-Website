@@ -1,9 +1,36 @@
-.skill-main-container{
-    padding: 50px 0 50px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: auto;
-    width: 80%;
-    margin: auto;
+.skills-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.skill-category {
+  margin-bottom: 60px;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .category-title {
+    font-size: 20px;
+  }
 }

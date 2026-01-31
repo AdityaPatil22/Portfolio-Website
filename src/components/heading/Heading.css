@@ -1,14 +1,13 @@
-.scetion-heading {
+.section-heading {
   text-align: center;
   font-size: 60px;
   margin: 50px 0px 50px 0px;
   font-family: "Kaushan Script", cursive;
-  font-optical-sizing: auto; 
+  color: var(--text-primary);
 }
 
-
-@media screen  and (max-width: 480px) {
-  .scetion-heading {
+@media screen and (max-width: 480px) {
+  .section-heading {
     font-size: 50px;
   }
 }

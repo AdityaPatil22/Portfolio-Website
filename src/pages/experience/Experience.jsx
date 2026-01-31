@@ -61,7 +61,7 @@ function Experience() {
       ),
     },
     {
-      title: "Student Traniee",
+      title: "Student Trainee",
       content: (
         <div>
           <ul className="list-disc list-outside font-normal mb-8">
