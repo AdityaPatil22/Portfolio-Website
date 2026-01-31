@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const transition = {
   type: "spring",
@@ -56,7 +57,7 @@ export const Menu = ({ setActive, children }) => {
 
 export const ProductItem = ({ title, description, href, src }) => {
   return (
-    <a href={href} className="flex space-x-2">
+    <Link to={href} className="flex space-x-2">
       <img
         src={src}
         width={140}
@@ -72,17 +73,18 @@ export const ProductItem = ({ title, description, href, src }) => {
           {description}
         </p>
       </div>
-    </a>
+    </Link>
   );
 };
 
-export const HoveredLink = ({ children, ...rest }) => {
+export const HoveredLink = ({ children, to, ...rest }) => {
   return (
-    <a
+    <Link
+      to={to}
       {...rest}
       className="text-neutral-700 dark:text-neutral-200 hover:text-black"
     >
       {children}
-    </a>
+    </Link>
   );
 };

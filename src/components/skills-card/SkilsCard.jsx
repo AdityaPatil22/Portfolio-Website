@@ -11,7 +11,7 @@ function SkilsCard({ skillImg , skillname}) {
       >
         <div className="skill-container">
           <img className="skill-img" src={skillImg} />
-          <p className="skill-name">{skillname}</p>
+          <p className="skill-name" >{skillname}</p>
         </div>
       </motion.div>
     </>
