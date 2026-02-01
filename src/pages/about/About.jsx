@@ -2,13 +2,11 @@ import { motion } from "framer-motion";
 import { 
   Mail, 
   MapPin, 
-  Github, 
-  Linkedin, 
-  Code2, 
   Briefcase,
   User
 } from "lucide-react";
 import { FocusCards } from "../../components/ui/focus-cards";
+import SplitText from "../../components/SplitText";
 import "./About.css";
 
 function About() {
@@ -104,7 +102,19 @@ function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="hello-heading">Hello There!</h2>
+          <SplitText
+            text="Hello There!"
+            className="hello-heading"
+            delay={50}
+            duration={0.9}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40, rotateY: 90 }}
+            to={{ opacity: 1, y: 0, rotateY: 0 }}
+            threshold={0.2}
+            rootMargin="-50px"
+            tag="h2"
+          />
           
           <p className="about-intro">
             I'm a <strong>Full Stack Developer</strong> passionate about building 
@@ -148,7 +158,6 @@ function About() {
 
       {/* Focus Cards Section */}
       <div className="focus-cards-section">
-        <h3 className="section-subtitle">Connect With Me</h3>
         <div className="focus-cards-container">
           <FocusCards cards={cards} />
         </div>

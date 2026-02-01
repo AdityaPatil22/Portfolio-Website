@@ -18,17 +18,23 @@
 }
 
 .resume-title {
+  display: block;
+  text-align: center;
   font-size: 36px;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
+  overflow: hidden;
 }
 
 .resume-subtitle {
+  display: block;
+  text-align: center;
   font-size: 18px;
   color: var(--accent-color);
   font-weight: 500;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .resume-description {

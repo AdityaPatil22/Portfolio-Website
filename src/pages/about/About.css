@@ -1,5 +1,5 @@
 .about-section {
-  padding: 40px 20px 100px;
+  padding: 40px 20px 40px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -80,10 +80,12 @@
 }
 
 .hello-heading {
+  display: block;
   font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .about-intro {

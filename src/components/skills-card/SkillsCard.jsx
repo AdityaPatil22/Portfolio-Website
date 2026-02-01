@@ -4,8 +4,8 @@ import "./SkillsCard.css";
 function SkillsCard({ skillImg, skillName }) {
   return (
     <motion.div
-      className="skill-box"
-      whileHover={{ scale: 1.1 }}
+      className="skill-box cursor-target"
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 15 }}
     >

@@ -1,9 +1,22 @@
 .section-heading {
+  display: block;
+  width: 100%;
   text-align: center;
   font-size: 60px;
   margin: 50px 0px 50px 0px;
   font-family: "Kaushan Script", cursive;
   color: var(--text-primary);
+}
+
+/* SplitText animation support */
+.split-parent {
+  overflow: hidden;
+}
+
+.split-char,
+.split-word,
+.split-line {
+  display: inline-block;
 }
 
 @media screen and (max-width: 480px) {

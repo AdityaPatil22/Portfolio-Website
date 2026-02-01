@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, ExternalLink, Briefcase, GraduationCap, Award } from "lucide-react";
 import Heading from "../../components/heading/Heading";
+import SplitText from "../../components/SplitText";
 import "./Resume.css";
 
 function Resume() {
@@ -39,13 +40,19 @@ function Resume() {
           transition={{ duration: 0.5 }}
         >
           <div className="resume-intro">
-            <h2 className="resume-title">Aditya Patil</h2>
-            <p className="resume-subtitle">Full Stack Developer</p>
-            <p className="resume-description">
-              Passionate about building scalable web applications with modern
-              technologies. Experienced in React, Vue, Angular, Node.js, and
-              cloud platforms.
-            </p>
+            <SplitText
+              text="Download/View My Resume"
+              className="resume-title"
+              delay={45}
+              duration={0.8}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 30, scale: 0.9 }}
+              to={{ opacity: 1, y: 0, scale: 1 }}
+              threshold={0.2}
+              rootMargin="-50px"
+              tag="h2"
+            />
           </div>
 
           <div className="resume-highlights">

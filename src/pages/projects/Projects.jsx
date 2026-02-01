@@ -15,7 +15,7 @@ function Projects() {
       description:
         "A full-featured blogging platform inspired by Medium. Users can create, update, and delete blogs with a rich text editor, engage with the community through comments, and share insights and experiences.",
       image: Blog,
-      techStack: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+      techStack: ["React", "Node.js", "MongoDB", "Express",],
       liveUrl: "https://friday-blog.netlify.app/",
       githubUrl: "https://github.com/AdityaPatil22",
     },
@@ -42,7 +42,7 @@ function Projects() {
       description:
         "A comprehensive vacation rental website built with the MERN stack. Features include property listings with search filters, booking management, user authentication, and review system.",
       image: Vacation,
-      techStack: ["MongoDB", "Express", "React", "Node.js", "Cloudinary"],
+      techStack: ["MongoDB", "Express", "React", "Node.js"],
       liveUrl: "https://vacation-rental-platform.onrender.com/listings",
       githubUrl: "https://github.com/AdityaPatil22",
     },
@@ -60,7 +60,7 @@ function Projects() {
       description:
         "Real-time campus navigation app helping students and visitors explore the campus with interactive maps, step-by-step directions, live location tracking, and point-of-interest markers.",
       image: RealTimeCampus,
-      techStack: ["React", "Leaflet.js", "Geolocation API", "Node.js"],
+      techStack: ["React", "Geolocation API", "Node.js"],
       liveUrl: null,
       githubUrl: "https://github.com/AdityaPatil22",
     },

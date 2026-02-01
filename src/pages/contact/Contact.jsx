@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, Github, Linkedin, Code2 } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, Code2, FileText, Download } from "lucide-react";
 import Heading from "../../components/heading/Heading";
+import Magnet from "../../components/Magnet";
 import "./Contact.css";
 
 function Contact() {
@@ -113,24 +114,30 @@ function Contact() {
               ))}
             </div>
 
-            <div className="contact-social">
-              <h3 className="social-heading">Follow Me</h3>
-              <div className="social-links">
-                {socialLinks.map((link) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-social-link"
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label={link.name}
-                  >
-                    {link.icon}
-                  </motion.a>
-                ))}
-              </div>
+            {/* Magnetic Resume Section */}
+            <div className="resume-section">
+              <h3 className="resume-title">Grab My Resume</h3>
+              <Magnet padding={80} magnetStrength={3}>
+                <motion.a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume-card"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="resume-icon-wrapper">
+                    <FileText size={32} />
+                  </div>
+                  <div className="resume-card-content">
+                    <span className="resume-card-title">Resume</span>
+                    <span className="resume-card-subtitle">View & Download PDF</span>
+                  </div>
+                  <div className="resume-download-icon">
+                    <Download size={20} />
+                  </div>
+                </motion.a>
+              </Magnet>
             </div>
           </motion.div>
 
