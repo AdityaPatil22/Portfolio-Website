@@ -1,6 +1,6 @@
 .about-section {
   padding: 40px 20px 40px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Text", sans-serif;
 }
 
 .about-container {
@@ -89,7 +89,7 @@
 }
 
 .about-intro {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.7;
   color: var(--text-primary);
   margin-bottom: 18px;
@@ -100,7 +100,7 @@
 }
 
 .about-description {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 14px;
@@ -112,7 +112,7 @@
 }
 
 .highlights-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 16px;
@@ -121,7 +121,7 @@
 .highlights-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 8px;
 }
 
 .highlight-item {
@@ -224,7 +224,7 @@
 
   .highlight-item {
     padding: 10px 12px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .hello-heading {

@@ -16,7 +16,7 @@
 
 .home-main-container p {
   font-size: 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Text", sans-serif;
   color: var(--text-secondary);
 }
 
@@ -63,7 +63,7 @@
   display: block;
   text-align: center;
   font-size: clamp(14px, 4vw, 20px);
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Text", sans-serif;
   color: var(--text-secondary);
   overflow: hidden;
   padding: 0 20px;

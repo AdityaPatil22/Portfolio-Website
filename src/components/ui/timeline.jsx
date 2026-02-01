@@ -20,7 +20,7 @@ export const Timeline = ({ data }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ["start 10%", "end 90%"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -33,16 +33,16 @@ export const Timeline = ({ data }) => {
     >
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pt-10 md:gap-10">
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-gray-300 dark:bg-zinc-600 p-2" />
+          <div key={index} className="flex justify-start pt-10 md:pt-16 md:gap-10">
+            <div className="sticky flex flex-col md:flex-row z-40 items-center top-24 md:top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-[var(--card-bg)] border border-[rgba(148,163,184,0.2)] flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_0_8px_rgba(99,102,241,0.5)]" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-4xl text-gray-900 dark:text-white font-semibold">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl lg:text-4xl text-[var(--text-primary)]">
                 {item.title}
               </h3>
             </div>
-            <div className="relative pl-20 pr-4 md:pl-4 w-full text-gray-700 dark:text-gray-300">
+            <div className="relative pl-20 pr-4 md:pl-4 w-full text-[var(--text-secondary)]">
               {item.content}
             </div>
           </div>
@@ -51,14 +51,14 @@ export const Timeline = ({ data }) => {
           style={{
             height: height + "px",
           }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-gradient-to-b from-transparent via-gray-300 dark:via-zinc-600 to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-gradient-to-b from-transparent via-[rgba(148,163,184,0.15)] to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-gray-500 via-gray-400 dark:from-zinc-400 dark:via-zinc-500 to-transparent rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-[#8b5cf6] via-[#6366f1] to-[#a5b4fc] rounded-full shadow-[0_0_8px_rgba(99,102,241,0.4)]"
           />
         </div>
       </div>

@@ -16,12 +16,12 @@ function Resume() {
       icon: <GraduationCap size={24} />,
       title: "Education",
       value: "B.Tech",
-      description: "Computer Science & Engineering",
+      description: "Electronics and Telecommunication Engineering",
     },
     {
       icon: <Award size={24} />,
       title: "Projects",
-      value: "10+",
+      value: "30+",
       description: "Completed web applications",
     },
   ];

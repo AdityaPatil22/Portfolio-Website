@@ -5,10 +5,187 @@
   margin: 0 auto;
 }
 
+/* Experience Card */
+.exp-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Mobile Title (shown only on mobile) */
+.exp-mobile-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Company Header */
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.exp-logo-wrapper {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.exp-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.exp-company-info {
+  flex: 1;
+}
+
+.exp-company-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.exp-company-name svg {
+  color: var(--text-secondary);
+}
+
+.exp-current-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.exp-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.exp-meta-item svg {
+  color: var(--text-muted);
+}
+
+/* Description */
+.exp-description {
+  margin-bottom: 20px;
+}
+
+.exp-description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-description li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.exp-description li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.exp-description li:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills */
+.exp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-skill-tag {
+  padding: 6px 14px;
+  background: var(--tag-bg);
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.exp-skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 /* Tablet */
 @media screen and (max-width: 768px) {
   .exp-main-container {
     padding: 10px 20px 60px;
+  }
+
+  .exp-card {
+    padding: 20px;
+  }
+
+  .exp-logo-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .exp-company-name {
+    font-size: 16px;
+  }
+
+  .exp-meta {
+    gap: 12px;
+  }
+
+  .exp-meta-item {
+    font-size: 13px;
   }
 }
 
@@ -18,18 +195,66 @@
     padding: 10px 16px 50px;
   }
 
-  .exp-main-container ul {
-    padding-left: 20px;
+  .exp-card {
+    padding: 16px;
+    border-radius: 12px;
   }
 
-  .exp-main-container li {
+  .exp-mobile-title {
+    font-size: 18px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .exp-logo-wrapper {
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+  }
+
+  .exp-company-name {
+    font-size: 15px;
+    flex-wrap: wrap;
+  }
+
+  .exp-current-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .exp-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exp-meta-item {
+    font-size: 12px;
+  }
+
+  .exp-description li {
     font-size: 14px;
-    line-height: 1.6;
+    padding-left: 16px;
+    margin-bottom: 10px;
   }
 
-  .exp-main-container img {
-    height: auto !important;
-    max-height: 120px !important;
+  .exp-description li::before {
+    width: 5px;
+    height: 5px;
+    top: 8px;
+  }
+
+  .exp-skill-tag {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .exp-skills {
+    gap: 6px;
   }
 }
 
@@ -37,5 +262,17 @@
 @media screen and (max-width: 360px) {
   .exp-main-container {
     padding: 10px 12px 40px;
+  }
+
+  .exp-card {
+    padding: 14px;
+  }
+
+  .exp-mobile-title {
+    font-size: 16px;
+  }
+
+  .exp-description li {
+    font-size: 13px;
   }
 }
