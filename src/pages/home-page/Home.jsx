@@ -5,7 +5,7 @@ import SplitText from "../../components/SplitText";
 function Home() {
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="home-wrapper">
         <div className="home-main-container relative z-10 flex flex-col items-center justify-center w-full h-full">
           <div className="profile-img-container">
             <img src={Profile} alt="profile image" className="profile-img" />

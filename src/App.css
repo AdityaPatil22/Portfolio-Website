@@ -70,10 +70,20 @@ img {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: add padding for fixed navbar */
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding-top: 73px;
+  }
 }
 
 /* Selection */
@@ -91,4 +101,49 @@ img {
 /* Smooth transitions for theme changes */
 *, *::before, *::after {
   transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Improve tap targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+
+  /* Account for fixed navbar when scrolling to sections */
+  [id] {
+    scroll-margin-top: 90px;
+  }
+
+  section, .section-heading, h1, h2, h3 {
+    scroll-margin-top: 90px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better touch scrolling */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }

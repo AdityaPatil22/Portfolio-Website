@@ -142,7 +142,12 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Tablet */
 @media screen and (max-width: 768px) {
+  .resume-container {
+    padding: 0 16px 60px;
+  }
+
   .resume-highlights {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -163,5 +168,85 @@
   .resume-btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .resume-container {
+    padding: 0 16px 50px;
+  }
+
+  .resume-content {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .resume-intro {
+    margin-bottom: 32px;
+  }
+
+  .resume-title {
+    font-size: 24px;
+  }
+
+  .resume-subtitle {
+    font-size: 16px;
+  }
+
+  .resume-description {
+    font-size: 14px;
+  }
+
+  .resume-highlights {
+    margin-bottom: 32px;
+  }
+
+  .highlight-card {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .highlight-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .highlight-value {
+    font-size: 24px;
+  }
+
+  .highlight-title {
+    font-size: 13px;
+  }
+
+  .highlight-desc {
+    font-size: 11px;
+  }
+
+  .resume-btn {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile */
+@media screen and (max-width: 360px) {
+  .resume-content {
+    padding: 24px 16px;
+  }
+
+  .resume-title {
+    font-size: 22px;
+  }
+
+  .highlight-card {
+    padding: 20px 12px;
+  }
+
+  .highlight-value {
+    font-size: 22px;
   }
 }

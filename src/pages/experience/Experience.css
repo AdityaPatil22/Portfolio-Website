@@ -5,8 +5,37 @@
   margin: 0 auto;
 }
 
+/* Tablet */
 @media screen and (max-width: 768px) {
   .exp-main-container {
     padding: 10px 20px 60px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .exp-main-container {
+    padding: 10px 16px 50px;
+  }
+
+  .exp-main-container ul {
+    padding-left: 20px;
+  }
+
+  .exp-main-container li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .exp-main-container img {
+    height: auto !important;
+    max-height: 120px !important;
+  }
+}
+
+/* Small mobile */
+@media screen and (max-width: 360px) {
+  .exp-main-container {
+    padding: 10px 12px 40px;
   }
 }
