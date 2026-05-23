@@ -45,13 +45,13 @@ export default function Card({
           </CardItem>
         )}
         <CardItem translateZ={30} className="w-full mt-4">
-          <div className="flex gap-3">
+          <div className="project-links">
             {liveUrl && (
               <a
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-sm font-medium rounded-lg hover:opacity-90 transition-opacity"
+                className="project-link primary"
               >
                 <ExternalLink size={16} />
                 Live Demo
@@ -62,7 +62,7 @@ export default function Card({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors"
+                className="project-link secondary"
               >
                 <Github size={16} />
                 Code

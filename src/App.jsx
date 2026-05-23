@@ -7,7 +7,6 @@ import Experience from "./pages/experience/Experience";
 import Projects from "./pages/projects/Projects";
 import Skills from "./pages/skills/Skills";
 import Resume from "./pages/resume/Resume";
-import Contact from "./pages/contact/Contact";
 import NotFound from "./pages/not-found/NotFound";
 import "./App.css";
 
@@ -22,7 +21,6 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

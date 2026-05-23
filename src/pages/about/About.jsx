@@ -30,11 +30,14 @@ function About() {
 
   const highlights = [
     "Frontend & Backend Development",
-    "React, Vue, Angular Expertise",
+    "AI & LLM Application Development",
     "RESTful API Design",
+    "RAG Pipelines & AI Workflows",
     "Database Management",
     "Cloud & DevOps",
+    "Containerized & Enterprise Deployments",
     "UI/UX Implementation",
+    "Performance Optimization & Accessibility"
   ];
 
   return (

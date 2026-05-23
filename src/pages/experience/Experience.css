@@ -139,6 +139,22 @@
   margin-bottom: 0;
 }
 
+/* Project Groups */
+.exp-project-group {
+  margin-bottom: 16px;
+}
+
+.exp-project-group:last-child {
+  margin-bottom: 0;
+}
+
+.exp-project-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
 /* Skills */
 .exp-skills {
   display: flex;

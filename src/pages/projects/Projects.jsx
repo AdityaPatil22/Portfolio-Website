@@ -4,6 +4,8 @@ import RealTimeCampus from "../../assets/project-images/real-time-campus.gif";
 import Spotify from "../../assets/project-images/spotify.gif";
 import Vacation from "../../assets/project-images/vacation.gif";
 import Blog from "../../assets/project-images/blog.gif";
+import AutoPatch from "../../assets/project-images/autopatch.gif";
+import ZenKitUI from "../../assets/project-images/zenkit-ui.gif";
 import RickMorty from "../../assets/project-images/rick-morty.gif";
 import Sweet from "../../assets/project-images/sweet.jpg";
 import "./Projects.css";
@@ -11,13 +13,31 @@ import "./Projects.css";
 function Projects() {
   const projects = [
     {
+      title: "AutoPatch AI",
+      description:
+        "AI-powered bug fix generator. Paste a bug ticket, get a code patch and push it as a GitHub Pull Request through a single interface.",
+      image: AutoPatch,
+      techStack: ["Python", "FastAPI", "React", "ChromaDB"],
+      liveUrl: "https://autopatch-ai-production.up.railway.app/",
+      githubUrl: "https://github.com/AdityaPatil22/AutoPatch-AI",
+    },
+    {
+      title: "ZenKit-UI",
+      description:
+        "Browse and generated UI components with a single click from ZenKit, a modern design system for React applications.",
+      image: ZenKitUI,
+      techStack: ["React", "Tailwind CSS", "Framer Motion"],
+      liveUrl: "https://zenkitui.vercel.app/",
+      githubUrl: "https://github.com/AdityaPatil22/zenkit-ui",
+    },
+    {
       title: "Blog Site",
       description:
         "A full-featured blogging platform inspired by Medium. Users can create, update, and delete blogs with a rich text editor, engage with the community through comments, and share insights and experiences.",
       image: Blog,
       techStack: ["React", "Node.js", "MongoDB", "Express",],
       liveUrl: "https://friday-blog.netlify.app/",
-      githubUrl: "https://github.com/AdityaPatil22",
+      githubUrl: "https://github.com/AdityaPatil22/Blog-Site",
     },
     {
       title: "Rick and Morty Toy Store",
@@ -26,7 +46,7 @@ function Projects() {
       image: RickMorty,
       techStack: ["HTML", "CSS", "JavaScript", "API Integration"],
       liveUrl: "https://side-projects-overkill.github.io/rick-and-morty-toy-store/",
-      githubUrl: "https://github.com/AdityaPatil22",
+      githubUrl: "https://github.com/AdityaPatil22/rick-and-morty-toy-store",
     },
     {
       title: "SweetSpot",
@@ -35,7 +55,7 @@ function Projects() {
       image: Sweet,
       techStack: ["React", "Tailwind CSS", "Framer Motion"],
       liveUrl: "https://sweets-spot.netlify.app/",
-      githubUrl: "https://github.com/AdityaPatil22",
+      githubUrl: "https://github.com/AdityaPatil22/SweetSpot",
     },
     {
       title: "Vacation Rental Platform",
@@ -44,7 +64,7 @@ function Projects() {
       image: Vacation,
       techStack: ["MongoDB", "Express", "React", "Node.js"],
       liveUrl: "https://vacation-rental-platform.onrender.com/listings",
-      githubUrl: "https://github.com/AdityaPatil22",
+      githubUrl: "https://github.com/AdityaPatil22/Vacation-Rental-Platform",
     },
     {
       title: "Spotify Clone",
@@ -53,14 +73,14 @@ function Projects() {
       image: Spotify,
       techStack: ["HTML", "CSS", "JavaScript", "Web Audio API"],
       liveUrl: "https://spotify-clone-proj1.netlify.app/",
-      githubUrl: "https://github.com/AdityaPatil22",
+      githubUrl: "https://github.com/AdityaPatil22/Spotify-Clone",
     },
     {
       title: "Campus Navigation System",
       description:
         "Real-time campus navigation app helping students and visitors explore the campus with interactive maps, step-by-step directions, live location tracking, and point-of-interest markers.",
       image: RealTimeCampus,
-      techStack: ["React", "Geolocation API", "Node.js"],
+      techStack: ["Kotlin", "Geolocation API", "Android Studio"],
       liveUrl: null,
       githubUrl: "https://github.com/AdityaPatil22",
     },

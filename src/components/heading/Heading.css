@@ -15,7 +15,6 @@
 #experience,
 #projects,
 #resume,
-#contact,
 #about {
   scroll-margin-top: 20px;
   position: relative;
@@ -27,7 +26,6 @@
   #experience,
   #projects,
   #resume,
-  #contact,
   #about {
     scroll-margin-top: 90px;
   }

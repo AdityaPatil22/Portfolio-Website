@@ -13,13 +13,41 @@ function Experience() {
       title: "Associate Software Engineer",
       company: "Red Hat",
       location: "Pune, India",
-      duration: "Aug 2024 - Present",
+      duration: "June 2024 - Present",
       type: "Full-time",
       description: [
-        "Contributing as a Frontend Engineer to the Digital Engineering team, driving innovative solutions and enhancing user experiences across enterprise platforms.",
-        "Collaborating closely with cross-functional teams to deliver seamless, responsive, and visually appealing web applications that align with business goals.",
-        "Implementing modern UI/UX patterns using React, Vue.js, and component-driven architecture.",
-        "Working with containerized environments using OpenShift and Podman for deployment workflows.",
+        {
+          project: "Customer Portal Product Security (CPPS)",
+          points: [
+            "Built and maintained frontend features for Product Security SPAs using Vue.js and PatternFly.",
+            "Implemented features such as Jump To navigation, JSON/CSV download support, and UI enhancements.",
+            "Improved code quality and contributed to CI/CD workflows for deployment and integration processes.",
+          ],
+        },
+        {
+          project: "Security Advisories MCP Server",
+          points: [
+            "Developed an MCP server for querying security advisories, CVEs, Bugzilla IDs, and solution data.",
+            "Implemented features such as dynamic query handling, input validation, rate limiting, and CORS protection.",
+            "Automated containerized deployments using OpenShift and integrated the server with AI-assisted workflows.",
+          ],
+        },
+        {
+          project: "Red Hat Design System (RHDS) MCP Server",
+          points: [
+            "Built an MCP server to support AI-assisted creation and validation of RHDS components.",
+            "Enabled integration with AI tools such as Cursor and Claude for frontend development workflows.",
+            "Published and maintained the MCP server as an NPM package for developer usage.",
+          ],
+        },
+        {
+          project: "DOCX Platform",
+          points: [
+            "Optimized page rendering and reduced CLS issues to improve user experience and page stability.",
+            "Implemented SWR caching and resolved production edge cases for faster and more reliable page loads.",
+            "Improved initial render performance by identifying and removing blocking requests.",
+          ],
+        },
       ],
       skills: ["React", "Vue.js", "TypeScript", "OpenShift", "Podman", "PatternFly"],
       logo: Redhat,
@@ -97,11 +125,24 @@ function Experience() {
 
         {/* Description */}
         <div className="exp-description">
-          <ul>
-            {exp.description.map((point, idx) => (
-              <li key={idx}>{point}</li>
-            ))}
-          </ul>
+          {typeof exp.description[0] === "string" ? (
+            <ul>
+              {exp.description.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
+          ) : (
+            exp.description.map((item, idx) => (
+              <div key={idx} className="exp-project-group">
+                <h4 className="exp-project-name">{item.project}</h4>
+                <ul>
+                  {item.points.map((point, pIdx) => (
+                    <li key={pIdx}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          )}
         </div>
 
         {/* Skills */}
