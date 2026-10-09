@@ -5,6 +5,8 @@ import Spotify from "../../assets/project-images/spotify.gif";
 import Vacation from "../../assets/project-images/vacation.gif";
 import Blog from "../../assets/project-images/blog.gif";
 import AutoPatch from "../../assets/project-images/autopatch.gif";
+import SenGuard from "../../assets/project-images/senguard.gif"
+import DevQuest from "../../assets/project-images/devquest.gif"
 import ZenKitUI from "../../assets/project-images/zenkit-ui.gif";
 import RickMorty from "../../assets/project-images/rick-morty.gif";
 import Sweet from "../../assets/project-images/sweet.jpg";
@@ -12,6 +14,24 @@ import "./Projects.css";
 
 function Projects() {
   const projects = [
+    {
+      title: "DevQuest",
+      description:
+        "DevQuest is an interactive AI-powered Claude Code plugin that transforms the process of making technical decisions into an immersive 2D game.",
+      image: DevQuest,
+      techStack: ["Python", "FastAPI", "Phaser", "WebSockets"],
+      liveUrl: "https://github.com/AdityaPatil22/devquest",
+      githubUrl: "https://github.com/AdityaPatil22/devquest",
+    },
+    {
+      title: "SenGuard",
+      description:
+        "AI Governance Platform that evaluates LLM applications before deployment.",
+      image: SenGuard,
+      techStack: ["Python", "FastAPI", "React", "Langraph"],
+      liveUrl: "https://sentinel-ai-h3m1.onrender.com/",
+      githubUrl: "https://github.com/AdityaPatil22/SenGuard",
+    },
     {
       title: "AutoPatch AI",
       description:
