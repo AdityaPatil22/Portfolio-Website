@@ -10,7 +10,6 @@
   align-items: center;
   gap: clamp(2rem, 5vw, 4.5rem);
   padding: clamp(2rem, 5vw, 4rem) 0 2.6rem;
-  border-top: 2px solid var(--text-primary);
 }
 
 .about-hero-copy {

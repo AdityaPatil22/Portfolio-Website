@@ -49,7 +49,7 @@ function About() {
       <header className="about-hero">
         <div className="about-hero-copy">
           <p className="about-eyebrow"><span className="about-status-dot" /> SOFTWARE ENGINEER · PUNE, INDIA</p>
-          <h1 className="about-title">I build software<br /><em>that moves ideas forward.</em></h1>
+          <h1 className="about-title">I build software<br /><em>that move ideas forward.</em></h1>
           <p className="about-lede">
             I’m <strong>Aditya Patil</strong>, a software engineer at Red Hat working across web
             platforms, developer experience, and AI-powered tools. I enjoy turning
@@ -57,10 +57,10 @@ function About() {
           </p>
           <div className="about-actions">
             <a className="about-primary-link" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
-              View résumé <ArrowUpRight size={16} aria-hidden="true" />
+              View resume <ArrowUpRight size={16} aria-hidden="true" />
             </a>
             <a className="about-text-link" href="mailto:adityapatil7649@gmail.com">
-              Get in touch <ArrowDownRight size={16} aria-hidden="true" />
+              Get in touch <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
           <p className="about-open-note"><span>Currently interested in</span> developer tooling, practical AI, and open source.</p>
