@@ -89,9 +89,6 @@
   color: var(--text-primary);
 }
 
-.doc-nav-item.active {
-  font-weight: 600;
-}
 
 .doc-nav-item:hover::after,
 .doc-nav-item.active::after {
