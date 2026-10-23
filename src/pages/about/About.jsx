@@ -5,9 +5,9 @@ import "./About.css";
 const RESUME_URL = "https://aditya-patil-resume.my.canva.site/";
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/aditya-patil-596413223/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/linked-in-aditya-patil/" },
   { label: "GitHub", href: "https://github.com/AdityaPatil22" },
-  { label: "LeetCode", href: "https://leetcode.com/u/aditya1592/" },
+  { label: "LeetCode", href: "https://leetcode.com/u/adityapatil22/" },
 ];
 
 const focusAreas = [
@@ -38,7 +38,7 @@ const focusAreas = [
 ];
 
 const highlights = [
-  { value: "Production", label: "software at Red Hat" },
+  { value: "Building Production ready", label: "software at Red Hat" },
   { value: "Open source", label: "contributions and collaboration" },
   { value: "Community", label: "talks, writing, and mentoring" },
 ];
@@ -63,21 +63,22 @@ function About() {
               Get in touch <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
-          <p className="about-open-note"><span>Currently interested in</span> developer tooling, practical AI, and open source.</p>
+          <p className="about-open-note"><span></span></p>
         </div>
         <div className="about-portrait-wrap">
           <div className="about-portrait-frame">
             <img className="about-portrait" src={ProfilePic} alt="Aditya Patil" />
           </div>
           <div className="about-portrait-caption">
-            <span className="about-caption-mark">AP / 22</span>
-            <span>Building in the open</span>
+            <span></span>
+            <span>adityapatil7649@gmail.com</span>
           </div>
           <div className="about-side-note" aria-hidden="true">ENGINEERING · CURIOSITY · COMMUNITY</div>
         </div>
       </header>
 
-      <section className="about-highlights" aria-label="Professional highlights">
+      <p className="about-open-note"><span>Things I’m involved in</span></p>
+      <section className="about-highlights" aria-label="Professional highlights">  
         {highlights.map((highlight) => (
           <div className="about-highlight" key={highlight.value}>
             <p className="about-highlight-value">{highlight.value}</p>
@@ -94,12 +95,12 @@ function About() {
         <div className="about-story-copy">
           <p>
             My work sits between product engineering and platform thinking. I’ve
-            worked on customer-facing web applications, performance improvements,
+            worked on customer facing web applications, performance improvements,
             and tools that help engineers get more done with less friction.
           </p>
           <p>
             More recently, I’ve been exploring how AI can become a useful part of
-            real development workflows—not just a demo. That means caring about
+            real development workflows not just a demo. That means caring about
             integration, reliability, and the experience around the model as much
             as the model itself.
           </p>

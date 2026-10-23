@@ -19,8 +19,6 @@ function DocumentChrome() {
     <header className="doc-header">
       <div className="doc-header-inner">
         <NavLink to="/" end className="doc-header-brand" aria-label="Aditya Patil — home">
-          <span className="doc-header-brand-name">Aditya Patil</span>
-          <span className="doc-header-brand-meta">Software Engineer · AI &amp; Developer Tools</span>
         </NavLink>
 
         <nav className="doc-nav" aria-label="Main navigation">

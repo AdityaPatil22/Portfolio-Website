@@ -7,6 +7,7 @@ import Blog from "../../assets/project-images/blog.gif";
 import AutoPatch from "../../assets/project-images/autopatch.gif";
 import SenGuard from "../../assets/project-images/senguard.gif"
 import DevQuest from "../../assets/project-images/devquest.gif"
+import JobAgent from "../../assets/project-images/job-agent.gif"
 import ZenKitUI from "../../assets/project-images/zenkit-ui.gif";
 import RickMorty from "../../assets/project-images/rick-morty.gif";
 import Sweet from "../../assets/project-images/sweet.jpg";
@@ -14,6 +15,15 @@ import "./Projects.css";
 
 function Projects() {
   const projects = [
+    {
+      title: "Job Agent",
+      description:
+        "A Job Agent that helps simplify job application process and keeping your data locally sorted.",
+      image: JobAgent,
+      techStack: ["Python", "Scripts", "Automation", "Ollama"],
+      liveUrl: "https://adityapatil22.github.io/job-agent",
+      githubUrl: "https://github.com/AdityaPatil22/job-agent",
+    },
     {
       title: "DevQuest",
       description:
@@ -38,7 +48,7 @@ function Projects() {
         "AI-powered bug fix generator. Paste a bug ticket, get a code patch and push it as a GitHub Pull Request through a single interface.",
       image: AutoPatch,
       techStack: ["Python", "FastAPI", "React", "ChromaDB"],
-      liveUrl: "https://autopatch-ai-production.up.railway.app/",
+      liveUrl: "https://auto-patch-zeta.vercel.app/",
       githubUrl: "https://github.com/AdityaPatil22/AutoPatch-AI",
     },
     {

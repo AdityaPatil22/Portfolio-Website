@@ -173,7 +173,7 @@
 .about-side-note {
   position: absolute;
   right: -1.7rem;
-  top: 35%;
+  top: 30%;
   writing-mode: vertical-rl;
   color: var(--text-muted);
   font-family: var(--font-mono);
@@ -366,6 +366,7 @@
 }
 
 .doc-page .about-email-link {
+  font-size: larger;
   font-weight: 700;
   text-decoration: none !important;
 }
