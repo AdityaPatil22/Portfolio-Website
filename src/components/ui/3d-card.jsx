@@ -1,4 +1,3 @@
-import { cn } from "../../lib/utils";
 import { createContext, useState, useContext, useRef, useEffect } from "react";
 
 const MouseEnterContext = createContext(undefined);
@@ -28,7 +27,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn("flex items-center ", containerClassName)}
+        className={`flex items-center ${containerClassName ?? ""}`}
         style={{
           perspective: "1000px",
         }}
@@ -38,10 +37,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
           onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className={cn(
-            "flex items-center  relative transition-all duration-200 ease-linear",
-            className
-          )}
+          className={`flex items-center relative transition-all duration-200 ease-linear ${className ?? ""}`}
           style={{
             transformStyle: "preserve-3d",
           }}
@@ -56,10 +52,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
 export const CardBody = ({ children, className }) => {
   return (
     <div
-      className={cn(
-        "w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
-        className
-      )}
+      className={`[transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d] ${className ?? ""}`}
     >
       {children}
     </div>
@@ -97,7 +90,7 @@ export const CardItem = ({
   return (
     <Tag
       ref={ref}
-      className={cn("w-fit transition duration-200 ease-linear", className)}
+      className={`transition duration-200 ease-linear ${className ?? ""}`}
       {...rest}
     >
       {children}

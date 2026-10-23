@@ -33,23 +33,6 @@
   text-decoration: none;
 }
 
-.doc-header-brand-name {
-  color: var(--text-primary);
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  white-space: nowrap;
-}
-
-.doc-header-brand-meta {
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.015em;
-  white-space: nowrap;
-}
-
 .doc-nav {
   display: flex;
   align-items: center;
@@ -119,10 +102,6 @@
     gap: 0.05rem;
   }
 
-  .doc-header-brand-meta {
-    font-size: 0.56rem;
-  }
-
   .doc-nav {
     gap: clamp(0.65rem, 2vw, 1.1rem);
   }
@@ -148,16 +127,6 @@
     align-items: baseline;
     gap: 0.55rem;
     min-height: 25px;
-  }
-
-  .doc-header-brand-name {
-    font-size: 1rem;
-  }
-
-  .doc-header-brand-meta {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.55rem;
   }
 
   .doc-nav {

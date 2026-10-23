@@ -7,7 +7,6 @@ import JavaScript from "../../assets/skills-images/javascript-1.svg";
 import TypeScript from "../../assets/skills-images/typescript.svg";
 import ReactIcon from "../../assets/skills-images/react-2.svg";
 import Vue from "../../assets/skills-images/vue-9.svg";
-import Angular from "../../assets/skills-images/angular-icon-1.svg";
 import Nuxt from "../../assets/skills-images/nuxt-2.svg";
 import Node from "../../assets/skills-images/nodejs-1.svg";
 import Express from "../../assets/skills-images/icons8-express-js.svg";
@@ -114,13 +113,7 @@ function Skills() {
 
   return (
     <>
-      <TargetCursor
-        targetSelector=".cursor-target"
-        spinDuration={2}
-        hideDefaultCursor={true}
-        hoverDuration={0.2}
-        parallaxOn={true}
-      />
+      <TargetCursor />
       
       <div className="skills-page-container">
         <div id="skills">

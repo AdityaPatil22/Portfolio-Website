@@ -164,12 +164,6 @@
   font-size: 0.72rem;
 }
 
-.about-caption-mark {
-  font-family: var(--font-mono);
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
 .about-side-note {
   position: absolute;
   right: -1.7rem;

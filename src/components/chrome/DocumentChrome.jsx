@@ -2,15 +2,13 @@ import { motion, useScroll } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import "./DocumentChrome.css";
 
-export const SECTIONS = [
+const SECTIONS = [
   { num: 1, title: "About", path: "/" },
   { num: 2, title: "Experience", path: "/experience" },
   { num: 3, title: "Projects", path: "/projects" },
   { num: 4, title: "Skills", path: "/skills" },
   { num: 5, title: "Impact", path: "/impact" },
 ];
-
-export const DOC_ID = "RFC 22";
 
 function DocumentChrome() {
   const { scrollYProgress } = useScroll();
