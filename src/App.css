@@ -23,6 +23,8 @@
   --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   --header-height: 68px;
+  --content-max-width: 1400px;
+  --page-gutter: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 /* Global Styles */
@@ -84,8 +86,8 @@ img {
 
 /* Minimal closing rule — no footer copy or metadata */
 .site-footer-rule {
-  width: calc(100% - 3rem);
-  max-width: 1400px;
+  width: calc(100% - (2 * var(--page-gutter)));
+  max-width: var(--content-max-width);
   height: 1px;
   flex: 0 0 1px;
   margin: 1.5rem auto 0;
@@ -94,9 +96,10 @@ img {
 
 /* Document primitives — shared by the content pages */
 .doc-page {
-  max-width: 50rem;
+  width: 100%;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--page-gutter);
 }
 
 .doc-page a {
@@ -173,7 +176,7 @@ img {
   }
 
   .site-footer-rule {
-    width: calc(100% - 2rem);
+    width: calc(100% - (2 * var(--page-gutter)));
     margin-top: 1rem;
   }
 }
@@ -187,9 +190,6 @@ img {
     font-size: 14px;
   }
 
-  .doc-page {
-    padding: 0 1.25rem;
-  }
 }
 
 /* Better touch scrolling */
