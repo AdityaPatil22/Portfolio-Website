@@ -86,7 +86,7 @@ img {
 
 /* Minimal closing rule — no footer copy or metadata */
 .site-footer-rule {
-  width: calc(100% - (2 * var(--page-gutter)));
+  width: calc(100% - 3rem);
   max-width: var(--content-max-width);
   height: 1px;
   flex: 0 0 1px;
@@ -176,7 +176,7 @@ img {
   }
 
   .site-footer-rule {
-    width: calc(100% - (2 * var(--page-gutter)));
+    width: calc(100% - 2rem);
     margin-top: 1rem;
   }
 }
