@@ -1,16 +1,29 @@
 .projects-main-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
   gap: 30px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px 80px;
 }
 
+/* The heading wrapper is a grid item, so it must span every project column. */
+.projects-main-container > #projects {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Keep cards from forcing the grid wider than its available space. */
+.projects-main-container > .card-container {
+  width: 100%;
+  min-width: 0;
+}
+
 /* Tablet */
 @media screen and (max-width: 900px) {
   .projects-main-container {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     padding: 0 24px 60px;
     gap: 24px;
   }
@@ -19,7 +32,7 @@
 /* Mobile */
 @media screen and (max-width: 768px) {
   .projects-main-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 0 16px 50px;
     gap: 20px;
   }
