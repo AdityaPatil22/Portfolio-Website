@@ -3,9 +3,14 @@
   min-width: 0;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
+}
+
+.project-preview-image {
+  display: block;
+  border-radius: 8px;
 }
 
 .card-container:hover {
