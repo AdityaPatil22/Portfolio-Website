@@ -1,5 +1,5 @@
 .experience-document {
-  max-width: 50rem;
+  max-width: var(--content-max-width);
 }
 
 .exp-intro {
