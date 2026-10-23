@@ -51,7 +51,7 @@ function About() {
           <p className="about-eyebrow"><span className="about-status-dot" /> SOFTWARE ENGINEER · PUNE, INDIA</p>
           <h1 className="about-title">I build software<br /><em>that moves ideas forward.</em></h1>
           <p className="about-lede">
-            I’m Aditya Patil, a software engineer at Red Hat working across web
+            I’m <strong>Aditya Patil</strong>, a software engineer at Red Hat working across web
             platforms, developer experience, and AI-powered tools. I enjoy turning
             complicated workflows into software that feels clear, useful, and dependable.
           </p>
