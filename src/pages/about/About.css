@@ -1,7 +1,7 @@
 /* About page: editorial profile that stays within the site's paper theme. */
 
 .about-document {
-  max-width: 58rem;
+  max-width: var(--content-max-width);
 }
 
 .about-hero {
