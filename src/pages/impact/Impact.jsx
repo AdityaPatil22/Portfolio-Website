@@ -1,97 +1,134 @@
+import { ArrowUpRight, BookOpen, GitPullRequest, Mic2 } from "lucide-react";
 import Heading from "../../components/heading/Heading";
 import { talks, contributions, articles } from "./impactData";
 import "./Impact.css";
 
-function RefEntry({ num, source, title, note, href }) {
+function ImpactSectionHeading({ number, eyebrow, title, description }) {
   return (
-    <li className="ref-entry">
-      <p className="ref-citation">
-        <span className="ref-marker">[{num}]</span>
-        Patil, A.,{" "}
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          &ldquo;{title}&rdquo;
-        </a>
-        , {source}.
-      </p>
-      <p className="ref-note">{note}</p>
-    </li>
+    <div className="impact-section-heading">
+      <span className="impact-section-number">{number}</span>
+      <div>
+        <p className="impact-kicker">{eyebrow}</p>
+        <h2>{title}</h2>
+        <p className="impact-section-description">{description}</p>
+      </div>
+    </div>
   );
 }
 
 function Impact() {
-  // Reference numbering is continuous across the two reference sections,
-  // as in an RFC.
-  let refNum = 0;
-
   return (
     <article className="doc-page impact-document">
       <div id="impact">
         <Heading number="5" title="Impact" />
       </div>
 
-      <p className="impact-intro">
-        Sharing knowledge, contributing to open source, and helping build the
-        developer community.
-      </p>
-
-      <section>
-        <h2 className="doc-subheading">
-          <span className="secnum">5.1</span>References (Normative)
-        </h2>
-        <ol className="ref-list">
-          {talks.map((talk) => (
-            <RefEntry
-              key={talk.title}
-              num={++refNum}
-              source={talk.conference}
-              title={talk.title}
-              note={talk.description}
-              href={talk.href}
-            />
-          ))}
-        </ol>
-      </section>
-
-      <section>
-        <h2 className="doc-subheading">
-          <span className="secnum">5.2</span>References (Informative)
-        </h2>
-        <ol className="ref-list">
-          {articles.map((article) => (
-            <RefEntry
-              key={article.title}
-              num={++refNum}
-              source={article.platform}
-              title={article.title}
-              note={article.description}
-              href={article.href}
-            />
-          ))}
-        </ol>
-      </section>
-
-      <section>
-        <h2 className="doc-subheading">
-          <span className="secnum">5.3</span>Contributors
-        </h2>
-        <p className="contrib-lead">
-          Fixes and improvements contributed upstream.
+      <div className="impact-intro-row">
+        <p className="impact-intro">
+          Good engineering travels beyond the code. I share what I learn, contribute
+          improvements upstream, and help other developers build with confidence.
         </p>
-        <ul className="contrib-list">
-          {contributions.map((c) => (
-            <li className="contrib-entry" key={c.href}>
-              <p className="contrib-repo">{c.repo}</p>
-              <p className="contrib-title">{c.title}</p>
-              <p className="contrib-desc">
-                {c.description}{" "}
-                <a href={c.href} target="_blank" rel="noopener noreferrer">
-                  {c.linkLabel}
-                </a>
-              </p>
-              <p className="contrib-tags">{c.tags.join(" / ")}</p>
-            </li>
+        <span className="impact-side-note">SHARE · CONTRIBUTE · LEARN</span>
+      </div>
+
+      <div className="impact-highlights" aria-label="Impact overview">
+        <div className="impact-highlight">
+          <span className="impact-highlight-value">{talks.length.toString().padStart(2, "0")}</span>
+          <span className="impact-highlight-label">Talks &amp; sessions</span>
+        </div>
+        <div className="impact-highlight">
+          <span className="impact-highlight-value">{contributions.length.toString().padStart(2, "0")}</span>
+          <span className="impact-highlight-label">Open-source contributions</span>
+        </div>
+        <div className="impact-highlight">
+          <span className="impact-highlight-value">{articles.length.toString().padStart(2, "0")}</span>
+          <span className="impact-highlight-label">Articles published</span>
+        </div>
+      </div>
+
+      <section className="impact-section">
+        <ImpactSectionHeading
+          number="01"
+          eyebrow="ON THE STAGE"
+          title="Talks &amp; conferences"
+          description="Lessons from production, practical AI, and the tools we use every day."
+        />
+        <div className="impact-talk-grid">
+          {talks.map((talk) => (
+            <a
+              className="impact-talk-card"
+              href={talk.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={talk.title}
+            >
+              <div className="impact-card-topline">
+                <span className="impact-category"><Mic2 size={14} aria-hidden="true" /> {talk.conference}</span>
+                <ArrowUpRight size={18} aria-hidden="true" className="impact-card-arrow" />
+              </div>
+              <h3>{talk.title}</h3>
+              <p>{talk.description}</p>
+              <span className="impact-card-link">View session details <ArrowUpRight size={14} aria-hidden="true" /></span>
+            </a>
           ))}
-        </ul>
+        </div>
+      </section>
+
+      <section className="impact-section">
+        <ImpactSectionHeading
+          number="02"
+          eyebrow="GIVE BACK UPSTREAM"
+          title="Open-source contributions"
+          description="Small, focused fixes that make shared tools more reliable for everyone."
+        />
+        <div className="impact-contribution-list">
+          {contributions.map((contribution) => (
+            <article className="impact-contribution-card" key={contribution.href}>
+              <div className="impact-contribution-icon">
+                <GitPullRequest size={18} aria-hidden="true" />
+              </div>
+              <div className="impact-contribution-copy">
+                <p className="impact-repository">{contribution.repo} <span>·</span> Open source</p>
+                <h3>{contribution.title}</h3>
+                <p className="impact-contribution-description">{contribution.description}</p>
+                <ul className="impact-tags" aria-label="Technologies">
+                  {contribution.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              </div>
+              <a className="impact-action-link" href={contribution.href} target="_blank" rel="noopener noreferrer">
+                {contribution.linkLabel} <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="impact-section impact-writing-section">
+        <ImpactSectionHeading
+          number="03"
+          eyebrow="NOTES FROM THE JOURNEY"
+          title="Writing &amp; ideas"
+          description="Technical deep dives, lessons learned, and perspectives worth sharing."
+        />
+        <div className="impact-article-grid">
+          {articles.map((article, index) => (
+            <a
+              className="impact-article-card"
+              href={article.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={article.title}
+            >
+              <div className="impact-article-topline">
+                <span className="impact-article-index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="impact-category"><BookOpen size={13} aria-hidden="true" /> {article.platform}</span>
+              </div>
+              <h3>{article.title}</h3>
+              <p>{article.description}</p>
+              <span className="impact-card-link">Read article <ArrowUpRight size={14} aria-hidden="true" /></span>
+            </a>
+          ))}
+        </div>
       </section>
     </article>
   );
