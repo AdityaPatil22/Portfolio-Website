@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { FloatingDock } from "./components/ui/floating-dock";
-import { Home, Briefcase, Code, Wrench, Zap } from "lucide-react";
+import DocumentChrome from "./components/chrome/DocumentChrome";
 import About from "./pages/about/About";
 import Experience from "./pages/experience/Experience";
 import Projects from "./pages/projects/Projects";
@@ -9,17 +8,10 @@ import Impact from "./pages/impact/Impact";
 import NotFound from "./pages/not-found/NotFound";
 import "./App.css";
 
-const navItems = [
-  { title: "About", icon: <Home className="w-full h-full" />, href: "/" },
-  { title: "Experience", icon: <Briefcase className="w-full h-full" />, href: "/experience" },
-  { title: "Projects", icon: <Code className="w-full h-full" />, href: "/projects" },
-  { title: "Skills", icon: <Wrench className="w-full h-full" />, href: "/skills" },
-  { title: "Impact", icon: <Zap className="w-full h-full" />, href: "/impact" },
-];
-
 function App() {
   return (
     <div className="main-container">
+      <DocumentChrome />
       <main className="main-content">
         <Routes>
           <Route path="/" element={<About />} />
@@ -30,7 +22,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <FloatingDock items={navItems} />
+      <footer className="site-footer-rule" aria-hidden="true" />
     </div>
   );
 }

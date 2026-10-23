@@ -1,183 +1,179 @@
-import { motion } from "framer-motion";
-import { Calendar, MapPin, Building2 } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import Heading from "../../components/heading/Heading";
-import { Timeline } from "../../components/ui/timeline";
 import Redhat from "../../assets/experience-images/Red_Hat-Logo.wine.svg";
 import Rework from "../../assets/experience-images/reworkai_logo.jpeg";
 import Zensar from "../../assets/experience-images/zensar-technologies-vector-logo.png";
 import "./Experience.css";
 
-const stagger = (i) => ({
-  initial: { opacity: 0, x: -12 },
-  whileInView: { opacity: 1, x: 0 },
-  transition: { duration: 0.35, delay: i * 0.06 },
-  viewport: { once: true },
-});
+const commits = [
+  {
+    hash: "9e2f7a1",
+    tag: "v3.0",
+    head: true,
+    company: "Red Hat",
+    title: "Associate Software Engineer",
+    date: "June 2024 – Present",
+    location: "Pune, India",
+    type: "Full-time",
+    logo: Redhat,
+    groups: [
+      {
+        project: "Customer Portal Product Security (CPPS)",
+        points: [
+          "Built and maintained frontend features for Product Security SPAs using Vue.js and PatternFly.",
+          "Implemented features such as Jump To navigation, JSON/CSV download support, and UI enhancements.",
+          "Improved code quality and contributed to CI/CD workflows for deployment and integration processes.",
+        ],
+      },
+      {
+        project: "Security Advisories MCP Server",
+        points: [
+          "Developed an MCP server for querying security advisories, CVEs, Bugzilla IDs, and solution data.",
+          "Implemented features such as dynamic query handling, input validation, rate limiting, and CORS protection.",
+          "Automated containerized deployments using OpenShift and integrated the server with AI-assisted workflows.",
+        ],
+      },
+      {
+        project: "Red Hat Design System (RHDS) MCP Server",
+        points: [
+          "Built an MCP server to support AI-assisted creation and validation of RHDS components.",
+          "Enabled integration with AI tools such as Cursor and Claude for frontend development workflows.",
+          "Published and maintained the MCP server as an NPM package for developer usage.",
+        ],
+      },
+      {
+        project: "DOCX Platform",
+        points: [
+          "Optimized page rendering and reduced CLS issues to improve user experience and page stability.",
+          "Implemented SWR caching and resolved production edge cases for faster and more reliable page loads.",
+          "Improved initial render performance by identifying and removing blocking requests.",
+        ],
+      },
+    ],
+    skills: ["React", "Vue.js", "TypeScript", "OpenShift", "Podman", "PatternFly"],
+  },
+  {
+    hash: "3c8d14b",
+    tag: "v2.0",
+    head: false,
+    company: "Rework AI",
+    title: "Full Stack Engineer",
+    date: "Jan 2024 – Jul 2024",
+    location: "Remote",
+    type: "Full-time",
+    logo: Rework,
+    points: [
+      "Developed and maintained full-stack applications as a Full Stack Engineer on the MERN team, contributing to the core product development.",
+      "Leveraged React.js to create a responsive web interface, driving a 15% user engagement increase through improved UX.",
+      "Integrated key features including pitch functionality, JD upload, and bulk file upload with Amazon S3, reducing upload times by 30%.",
+      "Implemented RESTful APIs and optimized database queries for improved application performance.",
+    ],
+    skills: ["React", "Node.js", "MongoDB", "Express", "AWS S3", "REST APIs"],
+  },
+  {
+    hash: "7a4e9d2",
+    tag: "v1.0",
+    head: false,
+    company: "Zensar Technologies",
+    title: "Student Trainee",
+    date: "Jun 2023 – Aug 2023",
+    location: "Pune, India",
+    type: "Internship",
+    logo: Zensar,
+    points: [
+      "Gained hands-on experience in Structured Query Language (SQL) and Procedural Language extensions to SQL (PL/SQL).",
+      "Optimized real-time data processing using relational databases, improving query performance.",
+      "Collaborated with senior developers to understand enterprise-level database management practices.",
+    ],
+    skills: ["SQL", "PL/SQL", "Oracle DB", "Data Processing"],
+  },
+];
 
 function Experience() {
-  const experienceData = [
-    {
-      title: "Associate Software Engineer",
-      company: "Red Hat",
-      location: "Pune, India",
-      duration: "June 2024 - Present",
-      type: "Full-time",
-      description: [
-        {
-          project: "Customer Portal Product Security (CPPS)",
-          points: [
-            "Built and maintained frontend features for Product Security SPAs using Vue.js and PatternFly.",
-            "Implemented features such as Jump To navigation, JSON/CSV download support, and UI enhancements.",
-            "Improved code quality and contributed to CI/CD workflows for deployment and integration processes.",
-          ],
-        },
-        {
-          project: "Security Advisories MCP Server",
-          points: [
-            "Developed an MCP server for querying security advisories, CVEs, Bugzilla IDs, and solution data.",
-            "Implemented features such as dynamic query handling, input validation, rate limiting, and CORS protection.",
-            "Automated containerized deployments using OpenShift and integrated the server with AI-assisted workflows.",
-          ],
-        },
-        {
-          project: "Red Hat Design System (RHDS) MCP Server",
-          points: [
-            "Built an MCP server to support AI-assisted creation and validation of RHDS components.",
-            "Enabled integration with AI tools such as Cursor and Claude for frontend development workflows.",
-            "Published and maintained the MCP server as an NPM package for developer usage.",
-          ],
-        },
-        {
-          project: "DOCX Platform",
-          points: [
-            "Optimized page rendering and reduced CLS issues to improve user experience and page stability.",
-            "Implemented SWR caching and resolved production edge cases for faster and more reliable page loads.",
-            "Improved initial render performance by identifying and removing blocking requests.",
-          ],
-        },
-      ],
-      skills: ["React", "Vue.js", "TypeScript", "OpenShift", "Podman", "PatternFly"],
-      logo: Redhat,
-      current: true,
-    },
-    {
-      title: "Full Stack Engineer",
-      company: "Rework AI",
-      location: "Remote",
-      duration: "Jan 2024 - Jul 2024",
-      type: "Full-time",
-      description: [
-        "Developed and maintained full-stack applications as a Full Stack Engineer on the MERN team, contributing to the core product development.",
-        "Leveraged React.js to create a responsive web interface, driving a 15% user engagement increase through improved UX.",
-        "Integrated key features including pitch functionality, JD upload, and bulk file upload with Amazon S3, reducing upload times by 30%.",
-        "Implemented RESTful APIs and optimized database queries for improved application performance.",
-      ],
-      skills: ["React", "Node.js", "MongoDB", "Express", "AWS S3", "REST APIs"],
-      logo: Rework,
-      current: false,
-    },
-    {
-      title: "Student Trainee",
-      company: "Zensar Technologies",
-      location: "Pune, India",
-      duration: "Jun 2023 - Aug 2023",
-      type: "Internship",
-      description: [
-        "Gained hands-on experience in Structured Query Language (SQL) and Procedural Language extensions to SQL (PL/SQL).",
-        "Optimized real-time data processing using relational databases, improving query performance.",
-        "Collaborated with senior developers to understand enterprise-level database management practices.",
-      ],
-      skills: ["SQL", "PL/SQL", "Oracle DB", "Data Processing"],
-      logo: Zensar,
-      current: false,
-    },
-  ];
-
-  let bulletIndex = 0;
-
-  const data = experienceData.map((exp) => ({
-    title: exp.title,
-    content: (
-      <motion.div
-        className={`exp-card${exp.current ? " exp-card--current" : ""}`}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        {/* Mobile Title */}
-        <h3 className="exp-mobile-title md:hidden">{exp.title}</h3>
-
-        {/* Company Header */}
-        <div className="exp-header">
-          <div className="exp-logo-wrapper">
-            <img src={exp.logo} alt={exp.company} className="exp-logo" />
-          </div>
-          <div className="exp-company-info">
-            <div className="exp-company-name">
-              <Building2 size={16} />
-              <span>{exp.company}</span>
-              {exp.current && <span className="exp-current-badge">Current</span>}
-            </div>
-            <div className="exp-meta">
-              <span className="exp-meta-item">
-                <Calendar size={14} />
-                {exp.duration}
-              </span>
-              <span className="exp-meta-item">
-                <MapPin size={14} />
-                {exp.location}
-              </span>
-              <span className="exp-type-badge">{exp.type}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Description */}
-        <div className="exp-description">
-          {typeof exp.description[0] === "string" ? (
-            <ul>
-              {exp.description.map((point, idx) => (
-                <motion.li key={idx} {...stagger(idx)}>{point}</motion.li>
-              ))}
-            </ul>
-          ) : (
-            exp.description.map((item, idx) => (
-              <div key={idx} className="exp-project-group">
-                <h4 className="exp-project-name">
-                  <span className="exp-project-index">0{idx + 1}</span>
-                  {item.project}
-                </h4>
-                <ul>
-                  {item.points.map((point, pIdx) => (
-                    <motion.li key={pIdx} {...stagger(bulletIndex++)}>{point}</motion.li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Skills */}
-        <div className="exp-skills">
-          {exp.skills.map((skill, idx) => (
-            <span key={idx} className="exp-skill-tag">{skill}</span>
-          ))}
-        </div>
-      </motion.div>
-    ),
-  }));
+  const reduceMotion = useReducedMotion();
 
   return (
-    <>
+    <article className="doc-page experience-document">
       <div id="experience">
-        <Heading title="Experience" />
+        <Heading title="Employment History" />
       </div>
 
-      <div className="exp-main-container">
-        <Timeline data={data} />
+      <p className="listing-caption">
+        Listing 1: git log — employment history, newest first
+      </p>
+
+      <div className="git-log" role="figure" aria-label="Employment history, newest first">
+        {commits.map((commit, i) => (
+          <motion.section
+            key={commit.hash}
+            className="commit"
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.35, delay: i * 0.12, ease: "easeOut" }}
+          >
+            <div className="commit-gutter" aria-hidden="true">
+              <span className="commit-node">*</span>
+              <span className="commit-line" />
+            </div>
+
+            <div className="commit-body">
+              <p className="commit-ref-line">
+                <span className="commit-hash">{commit.hash}</span>{" "}
+                <span className="commit-refs">
+                  {commit.head ? `(HEAD -> main, tag: ${commit.tag})` : `(tag: ${commit.tag})`}
+                </span>
+                {commit.head && <span className="commit-cursor" aria-hidden="true" />}
+              </p>
+
+              <p className="commit-subject">
+                {commit.logo && (
+                  <img className="commit-avatar" src={commit.logo} alt="" />
+                )}
+                <span>
+                  {commit.company} — {commit.title}
+                </span>
+              </p>
+
+              <p className="commit-meta">
+                <span className="meta-key">Date:</span> {commit.date}
+              </p>
+              <p className="commit-meta">
+                <span className="meta-key">Where:</span> {commit.location}
+              </p>
+              <p className="commit-meta">
+                <span className="meta-key">Type:</span> {commit.type}
+              </p>
+
+              <div className="commit-message">
+                {commit.groups
+                  ? commit.groups.map((group) => (
+                      <div className="commit-group" key={group.project}>
+                        <p className="commit-project">{group.project}</p>
+                        <ul>
+                          {group.points.map((point) => (
+                            <li key={point}>{point}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))
+                  : (
+                      <ul>
+                        {commit.points.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
+              </div>
+
+              <p className="commit-trailer">
+                <span className="meta-key">Skills:</span> {commit.skills.join(", ")}
+              </p>
+            </div>
+          </motion.section>
+        ))}
       </div>
-    </>
+    </article>
   );
 }
 

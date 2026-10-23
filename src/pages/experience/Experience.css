@@ -1,366 +1,234 @@
-.exp-main-container {
-  height: auto;
-  padding: 10px 40px 80px;
-  max-width: 1200px;
-  margin: 0 auto;
+.experience-document {
+  max-width: var(--content-max-width);
 }
 
-/* ── Card ── */
+.exp-intro {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 1.75rem;
+  max-width: 66ch;
+}
 
-.exp-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 28px 28px 24px;
-  margin-bottom: 16px;
+.listing-caption {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
+/* The listing — a code block sitting on darker paper */
+
+.git-log {
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 3px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  font-family: var(--font-mono);
 }
 
-.exp-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+.commit {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
 }
 
-/* Current role emphasis */
-.exp-card--current {
-  border: 1px solid rgba(27, 38, 59, 0.2);
-  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(27, 38, 59, 0.03) 100%);
-  box-shadow: 0 2px 16px rgba(27, 38, 59, 0.06);
+.commit + .commit {
+  margin-top: 1.5rem;
 }
 
-.exp-card--current:hover {
-  box-shadow: 0 12px 40px rgba(27, 38, 59, 0.12);
+/* Graph gutter */
+
+.commit-gutter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-/* Mobile Title */
-.exp-mobile-title {
-  font-family: "Red Hat Display", sans-serif;
-  font-size: 20px;
+.commit-node {
+  color: var(--accent-color);
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--accent-color);
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
-/* ── Company Header ── */
-
-.exp-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.exp-logo-wrapper {
-  width: 56px;
-  height: 56px;
-  background: var(--bg-primary);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-  padding: 8px;
-  border: 1px solid var(--border-color);
-}
-
-.exp-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.exp-company-info {
+.commit-line {
   flex: 1;
+  width: 1px;
+  background: var(--border-color);
+  margin-top: 2px;
 }
 
-.exp-company-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Red Hat Display", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+.commit:last-child .commit-line {
+  display: none;
 }
 
-.exp-company-name svg {
+/* Commit content */
+
+.commit-ref-line {
+  font-size: 0.82rem;
+  margin: 0 0 0.45rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.commit-hash {
   color: var(--accent-color);
-}
-
-.exp-current-badge {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
   font-weight: 600;
-  padding: 3px 10px;
+}
+
+.commit-refs {
+  color: var(--text-secondary);
+}
+
+.commit-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
   background: var(--accent-color);
-  color: white;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+  margin-left: 0.35em;
+  vertical-align: text-bottom;
+  animation: commit-cursor-blink 1.1s steps(2, start) infinite;
 }
 
-.exp-meta {
+@keyframes commit-cursor-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.commit-subject {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.55rem;
+  line-height: 1.45;
 }
 
-.exp-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
+.commit-avatar {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.commit-meta {
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  letter-spacing: 0.3px;
-}
-
-.exp-meta-item svg {
-  color: var(--text-secondary);
-  opacity: 0.6;
-}
-
-.exp-type-badge {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--accent-color);
-  padding: 2px 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  letter-spacing: 0.3px;
-}
-
-/* ── Description ── */
-
-.exp-description {
-  margin-bottom: 20px;
-}
-
-.exp-description ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  line-height: 1.65;
 }
 
-.exp-description li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.75;
+.meta-key {
+  display: inline-block;
+  min-width: 4.4em;
   color: var(--text-secondary);
+  font-weight: 500;
 }
 
-.exp-description li::before {
-  content: "";
+/* Commit body */
+
+.commit-message {
+  margin: 0.75rem 0 0;
+  padding-left: 1rem;
+}
+
+.commit-group {
+  margin-bottom: 0.9rem;
+}
+
+.commit-group:last-child {
+  margin-bottom: 0;
+}
+
+.commit-project {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.3rem;
+}
+
+.commit-message ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.commit-message li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.commit-message li::before {
+  content: "–";
   position: absolute;
   left: 0;
-  top: 10px;
-  width: 5px;
-  height: 5px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.exp-description li:last-child {
-  margin-bottom: 0;
-}
-
-/* ── Project Groups ── */
-
-.exp-project-group {
-  margin-bottom: 20px;
-  padding: 16px 18px;
-  background: var(--bg-primary);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-}
-
-.exp-project-group:last-child {
-  margin-bottom: 0;
-}
-
-.exp-project-name {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 12px 0;
-  letter-spacing: 0.3px;
-}
-
-.exp-project-index {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent-color);
-  opacity: 0.4;
-  letter-spacing: 0;
-}
-
-/* ── Skills ── */
-
-.exp-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-color);
-}
-
-.exp-skill-tag {
-  font-family: "JetBrains Mono", monospace;
-  padding: 5px 12px;
-  background: transparent;
   color: var(--text-secondary);
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  letter-spacing: 0.3px;
-  transition: all 0.2s ease;
 }
 
-.exp-skill-tag:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-  background: rgba(27, 38, 59, 0.04);
+/* Trailers */
+
+.commit-trailer {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0.9rem 0 0.25rem;
+  line-height: 1.65;
 }
 
-/* ── Responsive: Tablet ── */
-
-@media screen and (max-width: 768px) {
-  .exp-main-container {
-    padding: 10px 20px 60px;
-  }
-
-  .exp-card {
-    padding: 22px;
-  }
-
-  .exp-logo-wrapper {
-    width: 48px;
-    height: 48px;
-  }
-
-  .exp-company-name {
-    font-size: 16px;
-  }
-
-  .exp-meta {
-    gap: 12px;
-  }
-
-  .exp-project-group {
-    padding: 14px 16px;
-  }
-}
-
-/* ── Responsive: Mobile ── */
+/* Responsive */
 
 @media screen and (max-width: 600px) {
-  .exp-main-container {
-    padding: 10px 16px 50px;
+  .git-log {
+    padding: 1rem 0.85rem 0.85rem;
   }
 
-  .exp-card {
-    padding: 18px;
-    border-radius: 12px;
+  .commit {
+    grid-template-columns: 1.1rem 1fr;
   }
 
-  .exp-mobile-title {
-    font-size: 18px;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
+  .commit-node {
+    font-size: 0.85rem;
   }
 
-  .exp-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding-bottom: 16px;
+  .commit-subject {
+    font-size: 0.9rem;
   }
 
-  .exp-logo-wrapper {
-    width: 44px;
-    height: 44px;
-    padding: 6px;
+  .commit-avatar {
+    width: 18px;
+    height: 18px;
   }
 
-  .exp-company-name {
-    font-size: 15px;
-    flex-wrap: wrap;
+  .commit-message {
+    padding-left: 0.5rem;
   }
 
-  .exp-current-badge {
-    font-size: 9px;
-    padding: 2px 8px;
+  .commit-message li {
+    font-size: 0.8rem;
   }
 
-  .exp-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+  .commit-meta,
+  .commit-trailer {
+    font-size: 0.75rem;
   }
 
-  .exp-description li {
-    font-size: 13px;
-    padding-left: 16px;
-    margin-bottom: 8px;
-  }
-
-  .exp-description li::before {
-    width: 4px;
-    height: 4px;
-    top: 8px;
-  }
-
-  .exp-project-group {
-    padding: 12px 14px;
-    margin-bottom: 12px;
-  }
-
-  .exp-project-name {
-    font-size: 12px;
-  }
-
-  .exp-skill-tag {
-    padding: 4px 10px;
-    font-size: 11px;
-  }
-
-  .exp-skills {
-    gap: 5px;
+  .meta-key {
+    min-width: 4em;
   }
 }
 
-@media screen and (max-width: 360px) {
-  .exp-main-container {
-    padding: 10px 12px 40px;
-  }
+/* Reduced motion — cursor stops blinking, no streaming */
 
-  .exp-card {
-    padding: 14px;
-  }
-
-  .exp-mobile-title {
-    font-size: 16px;
-  }
-
-  .exp-description li {
-    font-size: 12px;
+@media (prefers-reduced-motion: reduce) {
+  .commit-cursor {
+    animation: none;
   }
 }

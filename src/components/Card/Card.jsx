@@ -11,8 +11,8 @@ export default function Card({
   githubUrl,
 }) {
   return (
-    <CardContainer className="card-container">
-      <CardBody className="card-body rounded-xl p-6 w-full max-w-sm">
+    <CardContainer containerClassName="w-full min-w-0" className="card-container">
+      <CardBody className="card-body p-6 w-full max-w-none">
         <CardItem translateZ={50} className="text-xl font-bold text-[var(--text-primary)]">
           {projectTitle}
         </CardItem>
@@ -27,7 +27,7 @@ export default function Card({
           <img
             src={projectImage}
             alt={`${projectTitle} preview`}
-            className="h-48 w-full object-cover rounded-xl"
+            className="project-preview-image h-48 w-full object-cover"
           />
         </CardItem>
         {techStack.length > 0 && (

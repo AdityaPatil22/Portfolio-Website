@@ -1,7 +1,7 @@
 .skill-container {
   height: 150px;
   width: 150px;
-  border-radius: 16px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +85,7 @@
 @media screen and (max-width: 360px) {
   .skill-container {
     height: 100px;
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
   .skill-img {

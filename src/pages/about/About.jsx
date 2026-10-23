@@ -1,146 +1,165 @@
-import { motion } from "framer-motion";
-import { Mail, MapPin, Briefcase, ExternalLink, Download } from "lucide-react";
-import { FlipWords } from "../../components/ui/flip-words";
-import { Spotlight } from "../../components/ui/spotlight";
+import { ArrowDownRight, ArrowUpRight, Code2, GitBranch, Layers3, Sparkles } from "lucide-react";
 import ProfilePic from "../../assets/profile-pic.jpeg";
 import "./About.css";
 
-const reveal = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: "easeOut", delay },
-  viewport: { once: true, margin: "-50px" },
-});
+const RESUME_URL = "https://aditya-patil-resume.my.canva.site/";
+
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/linked-in-aditya-patil/" },
+  { label: "GitHub", href: "https://github.com/AdityaPatil22" },
+  { label: "LeetCode", href: "https://leetcode.com/u/adityapatil22/" },
+];
+
+const focusAreas = [
+  {
+    number: "01",
+    icon: Sparkles,
+    title: "AI-powered developer tools",
+    description:
+      "Building practical LLM applications, agents, and MCP integrations that fit naturally into the tools developers already use.",
+    tags: ["LLM applications", "AI agents", "MCP"],
+  },
+  {
+    number: "02",
+    icon: Layers3,
+    title: "Reliable backend systems",
+    description:
+      "Designing maintainable APIs and services, with attention to clear contracts, useful observability, and predictable behavior.",
+    tags: ["Python", "FastAPI", "Node.js"],
+  },
+  {
+    number: "03",
+    icon: Code2,
+    title: "Fast, thoughtful interfaces",
+    description:
+      "Creating accessible web experiences and improving performance from the browser through to production delivery.",
+    tags: ["React", "Vue", "Nuxt"],
+  },
+];
+
+const highlights = [
+  { value: "Building Production ready", label: "software at Red Hat" },
+  { value: "Open source", label: "contributions and collaboration" },
+  { value: "Community", label: "talks, writing, and mentoring" },
+];
 
 function About() {
-  const socials = [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/aditya-patil-596413223/" },
-    { label: "GitHub", href: "https://github.com/AdityaPatil22" },
-    { label: "LeetCode", href: "https://leetcode.com/u/aditya1592/" },
-  ];
-
   return (
-    <section className="about-section" id="about">
-      {/* Hero */}
-      <motion.div className="about-hero" {...reveal(0)}>
-        <div className="hero-inner">
-          <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
-          <div className="intro-dot-grid" />
-          <div className="hero-content">
-            <motion.h2
-              className="intro-name"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            >
-              Aditya Patil
-            </motion.h2>
-            <p className="intro-role">
-              <FlipWords
-                words={["Full Stack Developer", "AI Enthusiast", "Open Source Contributor"]}
-                duration={3000}
-              />
-            </p>
-            <div className="intro-meta">
-              <span className="intro-meta-item"><Briefcase size={14} /> Associate Software Engineer @ Red Hat</span>
-              <span className="intro-meta-item"><MapPin size={14} /> India</span>
-              <span className="intro-meta-item"><Mail size={14} /> adityapatil7649@gmail.com</span>
-            </div>
+    <article className="doc-page about-document" id="about">
+      <header className="about-hero">
+        <div className="about-hero-copy">
+          <p className="about-eyebrow"><span className="about-status-dot" /> SOFTWARE ENGINEER · PUNE, INDIA</p>
+          <h1 className="about-title">I build software<br /><em>that move ideas forward.</em></h1>
+          <p className="about-lede">
+            I’m <strong>Aditya Patil</strong>, a software engineer at Red Hat working across web
+            platforms, developer experience, and AI-powered tools. I enjoy turning
+            complicated workflows into software that feels clear, useful, and dependable.
+          </p>
+          <div className="about-actions">
+            <a className="about-primary-link" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+              View resume <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a className="about-text-link" href="mailto:adityapatil7649@gmail.com">
+              Get in touch <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
           </div>
+          <p className="about-open-note"><span></span></p>
         </div>
-      </motion.div>
-
-      {/* Bento grid */}
-      <div className="about-bento">
-        {/* Photo */}
-        <motion.div className="bento-photo" {...reveal(0.1)}>
-          <img src={ProfilePic} alt="Aditya Patil" />
-        </motion.div>
-
-        {/* Bio */}
-        <motion.div className="bento-bio" {...reveal(0.15)}>
-          <p className="bio-lead">
-            I build scalable, production-grade applications
-            across the full stack.
-          </p>
-          <p className="bio-body">
-            What began as an interest in technology evolved into a passion for software engineering. Today, I enjoy working at the intersection of software engineering and AI, using LLMs to improve developer workflows and build tools people genuinely rely on.
-          </p>
-        </motion.div>
-
-        {/* Capabilities */}
-        <motion.div className="bento-cap" {...reveal(0.3)}>
-          <h3 className="cap-title">AI Engineering</h3>
-          <ul className="cap-list">
-            <li>LLM Applications &amp; AI Agents</li>
-            <li>RAG Pipelines &amp; AI Integrations</li>
-            <li>Developer Tools &amp; Automation</li>
-          </ul>
-        </motion.div>
-
-        <motion.div className="bento-cap" {...reveal(0.25)}>
-          <h3 className="cap-title">Backend Engineering</h3>
-          <ul className="cap-list">
-            <li>FastAPI &amp; Node.js</li>
-            <li>APIs &amp; MCP Servers</li>
-            <li>Cloud, Docker &amp; OpenShift</li>
-          </ul>
-        </motion.div>
-
-        <motion.div className="bento-cap" {...reveal(0.2)}>
-          <h3 className="cap-title">Web Engineering</h3>
-          <ul className="cap-list">
-            <li>React , Vue &amp; Nuxt</li>
-            <li>Modern UI Architecture</li>
-            <li>Performance &amp; Accessibility</li>
-          </ul>
-        </motion.div>
-
-        {/* Resume */}
-        <motion.div className="bento-resume" {...reveal(0.35)}>
-          <span className="section-label">// resume</span>
-          <div className="resume-buttons">
-            <a
-              href="https://aditya-patil-resume.my.canva.site/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-btn primary"
-            >
-              <ExternalLink size={14} /> View Resume
-            </a>
-            <a
-              href="https://aditya-patil-resume.my.canva.site/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-btn secondary"
-            >
-              <Download size={14} /> Download PDF
-            </a>
+        <div className="about-portrait-wrap">
+          <div className="about-portrait-frame">
+            <img className="about-portrait" src={ProfilePic} alt="Aditya Patil" />
           </div>
-        </motion.div>
-
-        {/* Connect */}
-        <motion.div className="bento-connect" {...reveal(0.4)}>
-          <span className="section-label">// connect</span>
-          <div className="connect-links">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="connect-link"
-              >
-                {s.label} <ExternalLink size={13} />
-              </a>
-            ))}
-            <a href="mailto:adityapatil7649@gmail.com" className="connect-link">
-              <Mail size={14} /> adityapatil7649@gmail.com
-            </a>
+          <div className="about-portrait-caption">
+            <span></span>
+            <span>adityapatil7649@gmail.com</span>
           </div>
-        </motion.div>
-      </div>
-    </section>
+          <div className="about-side-note" aria-hidden="true">ENGINEERING · CURIOSITY · COMMUNITY</div>
+        </div>
+      </header>
+
+      <p className="about-open-note"><span>Things I’m involved in</span></p>
+      <section className="about-highlights" aria-label="Professional highlights">  
+        {highlights.map((highlight) => (
+          <div className="about-highlight" key={highlight.value}>
+            <p className="about-highlight-value">{highlight.value}</p>
+            <p className="about-highlight-label">{highlight.label}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="about-section about-story">
+        <div className="about-section-heading">
+          <p className="about-kicker">A LITTLE CONTEXT</p>
+          <h2 className="doc-subheading">From interface details to systems thinking.</h2>
+        </div>
+        <div className="about-story-copy">
+          <p>
+            My work sits between product engineering and platform thinking. I’ve
+            worked on customer facing web applications, performance improvements,
+            and tools that help engineers get more done with less friction.
+          </p>
+          <p>
+            More recently, I’ve been exploring how AI can become a useful part of
+            real development workflows not just a demo. That means caring about
+            integration, reliability, and the experience around the model as much
+            as the model itself.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-section about-focus-section">
+        <div className="about-section-heading about-focus-heading">
+          <p className="about-kicker">WHAT I WORK ON</p>
+          <h2 className="doc-subheading">Three areas, one mindset.</h2>
+          <p className="about-section-intro">
+            Useful software comes from strong fundamentals, clear trade-offs, and
+            respect for the person using it.
+          </p>
+        </div>
+        <div className="about-focus-grid">
+          {focusAreas.map((area) => {
+            const Icon = area.icon;
+            return (
+              <article className="about-focus-card" key={area.number}>
+                <div className="about-focus-topline">
+                  <span className="about-focus-number">{area.number}</span>
+                  <Icon size={19} strokeWidth={1.7} aria-hidden="true" />
+                </div>
+                <h3>{area.title}</h3>
+                <p>{area.description}</p>
+                <ul className="about-tag-list" aria-label={`${area.title} skills`}>
+                  {area.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="about-bottom">
+        <div>
+          <p className="about-kicker">BEYOND THE BUILD</p>
+          <h2>Learn openly. Share what works. Give back.</h2>
+          <p>
+            I value the open-source community and the conversations that happen
+            around it—from contributing fixes to sharing lessons through developer
+            conferences, writing, and mentoring.
+          </p>
+        </div>
+        <div className="about-socials" aria-label="Elsewhere on the web">
+          {socials.map((social) => (
+            <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer">
+              {social.label}<ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <footer className="about-footer">
+        <span><GitBranch size={14} aria-hidden="true" /> Open to good problems and thoughtful collaboration.</span>
+        <a className="about-email-link" href="mailto:adityapatil7649@gmail.com">adityapatil7649@gmail.com</a>
+      </footer>
+    </article>
   );
 }
 
