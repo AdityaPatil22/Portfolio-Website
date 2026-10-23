@@ -1,155 +1,164 @@
+import { ArrowDownRight, ArrowUpRight, Code2, GitBranch, Layers3, Sparkles } from "lucide-react";
 import ProfilePic from "../../assets/profile-pic.jpeg";
 import "./About.css";
 
 const RESUME_URL = "https://aditya-patil-resume.my.canva.site/";
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/aditya-patil-596413223/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/linked-in-aditya-patil/" },
   { label: "GitHub", href: "https://github.com/AdityaPatil22" },
-  { label: "LeetCode", href: "https://leetcode.com/u/aditya1592/" },
+  { label: "LeetCode", href: "https://leetcode.com/u/adityapatil22/" },
+];
+
+const focusAreas = [
+  {
+    number: "01",
+    icon: Sparkles,
+    title: "AI-powered developer tools",
+    description:
+      "Building practical LLM applications, agents, and MCP integrations that fit naturally into the tools developers already use.",
+    tags: ["LLM applications", "AI agents", "MCP"],
+  },
+  {
+    number: "02",
+    icon: Layers3,
+    title: "Reliable backend systems",
+    description:
+      "Designing maintainable APIs and services, with attention to clear contracts, useful observability, and predictable behavior.",
+    tags: ["Python", "FastAPI", "Node.js"],
+  },
+  {
+    number: "03",
+    icon: Code2,
+    title: "Fast, thoughtful interfaces",
+    description:
+      "Creating accessible web experiences and improving performance from the browser through to production delivery.",
+    tags: ["React", "Vue", "Nuxt"],
+  },
+];
+
+const highlights = [
+  { value: "Building Production ready", label: "software at Red Hat" },
+  { value: "Open source", label: "contributions and collaboration" },
+  { value: "Community", label: "talks, writing, and mentoring" },
 ];
 
 function About() {
   return (
     <article className="doc-page about-document" id="about">
-      {/* RFC header block */}
-      <header className="rfc-head">
-        <dl className="rfc-meta">
-          <div className="rfc-meta-row">
-            <dt>Request for Comments</dt>
-            <dd>22</dd>
+      <header className="about-hero">
+        <div className="about-hero-copy">
+          <p className="about-eyebrow"><span className="about-status-dot" /> SOFTWARE ENGINEER · PUNE, INDIA</p>
+          <h1 className="about-title">I build software<br /><em>that move ideas forward.</em></h1>
+          <p className="about-lede">
+            I’m <strong>Aditya Patil</strong>, a software engineer at Red Hat working across web
+            platforms, developer experience, and AI-powered tools. I enjoy turning
+            complicated workflows into software that feels clear, useful, and dependable.
+          </p>
+          <div className="about-actions">
+            <a className="about-primary-link" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+              View resume <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a className="about-text-link" href="mailto:adityapatil7649@gmail.com">
+              Get in touch <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
           </div>
-          <div className="rfc-meta-row">
-            <dt>Category</dt>
-            <dd>Full Stack &amp; AI Engineering</dd>
+          <p className="about-open-note"><span></span></p>
+        </div>
+        <div className="about-portrait-wrap">
+          <div className="about-portrait-frame">
+            <img className="about-portrait" src={ProfilePic} alt="Aditya Patil" />
           </div>
-          <div className="rfc-meta-row">
-            <dt>Status</dt>
-            <dd>Accepting interesting problems</dd>
+          <div className="about-portrait-caption">
+            <span></span>
+            <span>adityapatil7649@gmail.com</span>
           </div>
-          <div className="rfc-meta-row">
-            <dt>Expires</dt>
-            <dd>Never</dd>
-          </div>
-        </dl>
-        <div className="rfc-author-block">
-          <img className="rfc-portrait" src={ProfilePic} alt="Portrait of Aditya Patil" />
-          <div className="rfc-author-lines">
-            <p className="rfc-author-name">A. Patil</p>
-            <p className="rfc-author-org">Red Hat</p>
-            <p className="rfc-author-loc">Pune, India</p>
-          </div>
+          <div className="about-side-note" aria-hidden="true">ENGINEERING · CURIOSITY · COMMUNITY</div>
         </div>
       </header>
 
-      {/* Document title */}
-      <h1 className="rfc-title">Aditya Patil</h1>
-      <p className="rfc-subtitle">Software Engineer — Full Stack &amp; AI Applications</p>
-
-      {/* Abstract */}
-      <section className="rfc-abstract">
-        <h2 className="doc-subheading">Abstract</h2>
-        <p className="rfc-prose">
-          This document describes a software engineer who builds scalable,
-          production-grade applications across the full stack. The author
-          currently works at the intersection of software engineering and AI,
-          using LLMs to improve developer workflows and building tools people
-          genuinely rely on.
-        </p>
+      <p className="about-open-note"><span>Things I’m involved in</span></p>
+      <section className="about-highlights" aria-label="Professional highlights">  
+        {highlights.map((highlight) => (
+          <div className="about-highlight" key={highlight.value}>
+            <p className="about-highlight-value">{highlight.value}</p>
+            <p className="about-highlight-label">{highlight.label}</p>
+          </div>
+        ))}
       </section>
 
-      {/* §1 Introduction */}
-      <section className="rfc-section">
-        <h2 className="doc-subheading">
-          <span className="secnum">1</span>Introduction
-        </h2>
-        <p className="rfc-prose">
-          What began as an interest in technology evolved into a passion for
-          software engineering. Today I work at the intersection of software
-          engineering and AI: using LLMs to improve developer workflows, and
-          building tools people genuinely rely on.
-        </p>
-        <p className="rfc-prose">
-          The rest of this document describes where that work has happened
-          (§2), what it has produced (§3, §4), and what it has given back (§5).
-        </p>
+      <section className="about-section about-story">
+        <div className="about-section-heading">
+          <p className="about-kicker">A LITTLE CONTEXT</p>
+          <h2 className="doc-subheading">From interface details to systems thinking.</h2>
+        </div>
+        <div className="about-story-copy">
+          <p>
+            My work sits between product engineering and platform thinking. I’ve
+            worked on customer facing web applications, performance improvements,
+            and tools that help engineers get more done with less friction.
+          </p>
+          <p>
+            More recently, I’ve been exploring how AI can become a useful part of
+            real development workflows not just a demo. That means caring about
+            integration, reliability, and the experience around the model as much
+            as the model itself.
+          </p>
+        </div>
       </section>
 
-      {/* §1.1 – §1.3 Capabilities */}
-      <section className="rfc-section">
-        <h3 className="doc-subheading rfc-subsection">
-          <span className="secnum">1.1</span>AI Engineering
-        </h3>
-        <p className="rfc-req">
-          Systems the author builds <span className="rfc-keyword">MUST</span>{" "}
-          integrate cleanly with existing developer workflows. Current work
-          includes:
-        </p>
-        <ul className="rfc-list">
-          <li>LLM applications &amp; AI agents</li>
-          <li>RAG pipelines &amp; AI integrations</li>
-          <li>Developer tools &amp; automation</li>
-        </ul>
+      <section className="about-section about-focus-section">
+        <div className="about-section-heading about-focus-heading">
+          <p className="about-kicker">WHAT I WORK ON</p>
+          <h2 className="doc-subheading">Three areas, one mindset.</h2>
+          <p className="about-section-intro">
+            Useful software comes from strong fundamentals, clear trade-offs, and
+            respect for the person using it.
+          </p>
+        </div>
+        <div className="about-focus-grid">
+          {focusAreas.map((area) => {
+            const Icon = area.icon;
+            return (
+              <article className="about-focus-card" key={area.number}>
+                <div className="about-focus-topline">
+                  <span className="about-focus-number">{area.number}</span>
+                  <Icon size={19} strokeWidth={1.7} aria-hidden="true" />
+                </div>
+                <h3>{area.title}</h3>
+                <p>{area.description}</p>
+                <ul className="about-tag-list" aria-label={`${area.title} skills`}>
+                  {area.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              </article>
+            );
+          })}
+        </div>
       </section>
 
-      <section className="rfc-section">
-        <h3 className="doc-subheading rfc-subsection">
-          <span className="secnum">1.2</span>Backend Engineering
-        </h3>
-        <p className="rfc-req">
-          Services <span className="rfc-keyword">SHOULD</span> fail loudly and
-          log honestly. The author works with:
-        </p>
-        <ul className="rfc-list">
-          <li>FastAPI &amp; Node.js</li>
-          <li>APIs &amp; MCP servers</li>
-          <li>Cloud, Docker &amp; OpenShift</li>
-        </ul>
-      </section>
-
-      <section className="rfc-section">
-        <h3 className="doc-subheading rfc-subsection">
-          <span className="secnum">1.3</span>Web Engineering
-        </h3>
-        <p className="rfc-req">
-          Interfaces <span className="rfc-keyword">MUST</span> remain fast and
-          accessible. Built with:
-        </p>
-        <ul className="rfc-list">
-          <li>React, Vue &amp; Nuxt</li>
-          <li>Modern UI architecture</li>
-          <li>Performance &amp; accessibility</li>
-        </ul>
-      </section>
-
-      {/* Author's Address */}
-      <section className="rfc-address">
-        <h2 className="doc-subheading">Author&apos;s Address</h2>
-        <address className="rfc-address-lines">
-          Aditya Patil
-          <br />
-          Red Hat
-          <br />
-          Pune, India
-        </address>
-        <p className="rfc-address-links">
-          <span className="rfc-address-label">Email:</span>{" "}
-          <a href="mailto:adityapatil7649@gmail.com">adityapatil7649@gmail.com</a>
-          <br />
-          <span className="rfc-address-label">Résumé:</span>{" "}
-          <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">view</a>
-          {" / "}
-          <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">download PDF</a>
-          <br />
-          <span className="rfc-address-label">Elsewhere:</span>{" "}
-          {socials.map((s, i) => (
-            <span key={s.label}>
-              {i > 0 && " / "}
-              <a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
-            </span>
+      <section className="about-bottom">
+        <div>
+          <p className="about-kicker">BEYOND THE BUILD</p>
+          <h2>Learn openly. Share what works. Give back.</h2>
+          <p>
+            I value the open-source community and the conversations that happen
+            around it—from contributing fixes to sharing lessons through developer
+            conferences, writing, and mentoring.
+          </p>
+        </div>
+        <div className="about-socials" aria-label="Elsewhere on the web">
+          {socials.map((social) => (
+            <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer">
+              {social.label}<ArrowUpRight size={15} aria-hidden="true" />
+            </a>
           ))}
-        </p>
+        </div>
       </section>
+
+      <footer className="about-footer">
+        <span><GitBranch size={14} aria-hidden="true" /> Open to good problems and thoughtful collaboration.</span>
+        <a className="about-email-link" href="mailto:adityapatil7649@gmail.com">adityapatil7649@gmail.com</a>
+      </footer>
     </article>
   );
 }

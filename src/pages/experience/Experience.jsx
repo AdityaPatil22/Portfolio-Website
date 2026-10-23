@@ -95,12 +95,8 @@ function Experience() {
   return (
     <article className="doc-page experience-document">
       <div id="experience">
-        <Heading number="2" title="Employment History" />
+        <Heading title="Employment History" />
       </div>
-
-      <p className="exp-intro">
-        Where I&apos;ve shipped production code, newest first.
-      </p>
 
       <p className="listing-caption">
         Listing 1: git log — employment history, newest first

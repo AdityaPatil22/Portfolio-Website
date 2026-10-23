@@ -24,7 +24,7 @@ function NotFound() {
         </p>
 
         <p className="nf-action">
-          <Link to="/">Return to §1, About</Link>
+          <Link to="/">Return to About</Link>
         </p>
       </motion.article>
     </div>

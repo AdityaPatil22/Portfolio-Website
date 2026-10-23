@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import DocumentChrome, { DOC_ID } from "./components/chrome/DocumentChrome";
+import DocumentChrome from "./components/chrome/DocumentChrome";
 import About from "./pages/about/About";
 import Experience from "./pages/experience/Experience";
 import Projects from "./pages/projects/Projects";
@@ -22,11 +22,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <footer className="doc-colophon">
-        <span>{DOC_ID}</span>
-        <span>Aditya Patil</span>
-        <span className="colophon-note">This document was typeset by hand.</span>
-      </footer>
+      <footer className="site-footer-rule" aria-hidden="true" />
     </div>
   );
 }

@@ -124,7 +124,7 @@ function Skills() {
       
       <div className="skills-page-container">
         <div id="skills">
-          <Heading number="4" title="Skills" />
+          <Heading title="Skills" />
         </div>
 
         {skillCategories.map((category, categoryIndex) => (

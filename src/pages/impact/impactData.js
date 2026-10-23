@@ -35,7 +35,7 @@ export const talks = [
 export const contributions = [
   {
     repo: "Feast",
-    title: "Fixed UI not displaying newly created projects",
+    title: "Fixed Registry not displaying newly created projects",
     description:
       "Replaced static file loading with a dynamic API route for SQL Registry projects.",
     tags: ["Frontend", "React", "API"],
