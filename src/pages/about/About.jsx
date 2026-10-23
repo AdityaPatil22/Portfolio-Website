@@ -156,7 +156,7 @@ function About() {
 
       <footer className="about-footer">
         <span><GitBranch size={14} aria-hidden="true" /> Open to good problems and thoughtful collaboration.</span>
-        <a href="mailto:adityapatil7649@gmail.com">adityapatil7649@gmail.com</a>
+        <a className="about-email-link" href="mailto:adityapatil7649@gmail.com">adityapatil7649@gmail.com</a>
       </footer>
     </article>
   );
