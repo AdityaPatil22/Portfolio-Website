@@ -18,7 +18,7 @@ function Projects() {
     {
       title: "Job Agent",
       description:
-        "A Job Agent that helps simplify job application process and keeping your data locally sorted.",
+        "A Job Agent that streamlines the job application process through automated form filling, application tracking, and resume management while keeping all your data secure.",
       image: JobAgent,
       techStack: ["Python", "Scripts", "Automation", "Ollama"],
       liveUrl: "https://adityapatil22.github.io/job-agent",
@@ -36,7 +36,7 @@ function Projects() {
     {
       title: "SenGuard",
       description:
-        "AI Governance Platform that evaluates LLM applications before deployment.",
+        "AI Governance Platform that evaluates LLM applications for safety, reliability, and compliance before deployment, helping identify risks and ensure responsible AI behavior.",
       image: SenGuard,
       techStack: ["Python", "FastAPI", "React", "Langraph"],
       liveUrl: "https://sentinel-ai-h3m1.onrender.com/",
