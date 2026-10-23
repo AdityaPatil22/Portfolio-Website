@@ -1,5 +1,5 @@
 import { motion, useScroll } from "framer-motion";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./DocumentChrome.css";
 
 export const SECTIONS = [
@@ -11,75 +11,40 @@ export const SECTIONS = [
 ];
 
 export const DOC_ID = "RFC 22";
-export const DOC_DATE = "October 2026";
-
-const UNNUMBERED = { num: "?", title: "Unnumbered" };
 
 function DocumentChrome() {
-  const { pathname } = useLocation();
   const { scrollYProgress } = useScroll();
 
-  const current =
-    SECTIONS.find((s) => s.path === pathname) ?? UNNUMBERED;
-
   return (
-    <>
-      {/* Running header */}
-      <header className="doc-header">
-        <div className="doc-header-inner">
-          <div className="doc-header-left">
-            <span className="doc-header-id">{DOC_ID}</span>
-            <span className="doc-header-section">
-              § {current.num} {current.title}
-            </span>
-          </div>
-          <span className="doc-header-date">{DOC_DATE}</span>
-        </div>
-        <motion.div
-          className="doc-progress"
-          style={{ scaleX: scrollYProgress }}
-          aria-hidden="true"
-        />
-      </header>
+    <header className="doc-header">
+      <div className="doc-header-inner">
+        <NavLink to="/" end className="doc-header-brand" aria-label="Aditya Patil — home">
+          <span className="doc-header-brand-name">Aditya Patil</span>
+          <span className="doc-header-brand-meta">Software Engineer · AI &amp; Developer Tools</span>
+        </NavLink>
 
-      {/* Table of contents — desktop sidebar */}
-      <aside className="doc-toc" aria-label="Table of contents">
-        <p className="doc-toc-title">Contents</p>
-        <nav>
-          {SECTIONS.map((s) => (
+        <nav className="doc-nav" aria-label="Main navigation">
+          {SECTIONS.map((section) => (
             <NavLink
-              key={s.path}
-              to={s.path}
-              end={s.path === "/"}
+              key={section.path}
+              to={section.path}
+              end={section.path === "/"}
               className={({ isActive }) =>
-                "doc-toc-item" + (isActive ? " active" : "")
+                "doc-nav-item" + (isActive ? " active" : "")
               }
             >
-              <span className="doc-toc-num">§{s.num}</span>
-              <span className="doc-toc-label">{s.title}</span>
-              <span className="doc-toc-leader" aria-hidden="true" />
+              {section.title}
             </NavLink>
           ))}
         </nav>
-      </aside>
+      </div>
 
-      {/* Section bar — mobile */}
-      <nav className="doc-bottom-nav" aria-label="Sections">
-        {SECTIONS.map((s) => (
-          <NavLink
-            key={s.path}
-            to={s.path}
-            end={s.path === "/"}
-            className={({ isActive }) =>
-              "doc-bottom-item" + (isActive ? " active" : "")
-            }
-          >
-            <span className="doc-bottom-num">§{s.num}</span>
-            <span className="doc-bottom-label">{s.title}</span>
-          </NavLink>
-        ))}
-      </nav>
-    </>
+      <motion.div
+        className="doc-progress"
+        style={{ scaleX: scrollYProgress }}
+        aria-hidden="true"
+      />
+    </header>
   );
 }
 
