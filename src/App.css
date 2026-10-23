@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global design tokens — warm paper document theme */
+/* Global design tokens — clean, cool-neutral paper theme */
 :root {
-  --bg-primary: #f6f4ef;
-  --bg-secondary: #edeade;
-  --card-bg: #fdfcf8;
-  --footer-bg: #edeade;
-  --text-primary: #2b2d42;
-  --text-secondary: #5b616e;
-  --text-muted: #756f60;
-  --border-color: #d9d4c8;
-  --accent-color: #1b263b;
-  --tag-bg: #eae6da;
-  --rule-color: #c9c3b2;
-  --paper-dots: radial-gradient(circle, #e3dfd5 0.8px, transparent 1.2px);
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef1f5;
+  --card-bg: #ffffff;
+  --footer-bg: #eef1f5;
+  --text-primary: #252d3b;
+  --text-secondary: #566173;
+  --text-muted: #697386;
+  --border-color: #dce1e8;
+  --accent-color: #1e293b;
+  --tag-bg: #f0f3f7;
+  --rule-color: #cbd3de;
+  --paper-dots: radial-gradient(circle, #e8ecf2 0.8px, transparent 1.2px);
   --paper-dot-grid: 22px 22px;
 
   --font-display: "Source Serif 4", "Red Hat Display", Georgia, serif;
