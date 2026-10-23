@@ -20,7 +20,7 @@ function Impact() {
   return (
     <article className="doc-page impact-document">
       <div id="impact">
-        <Heading number="5" title="Impact" />
+        <Heading title="Impact" />
       </div>
 
       <div className="impact-intro-row">
