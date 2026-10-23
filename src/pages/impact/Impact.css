@@ -2,9 +2,9 @@
 
 .doc-page.impact-document {
   width: 100%;
-  max-width: 78rem;
-  padding-right: clamp(1.25rem, 4vw, 2.5rem);
-  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  max-width: var(--content-max-width);
+  padding-right: var(--page-gutter);
+  padding-left: var(--page-gutter);
 }
 
 .impact-intro-row {
