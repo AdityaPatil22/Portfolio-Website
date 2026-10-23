@@ -109,7 +109,7 @@ function Projects() {
   return (
     <div className="projects-main-container">
       <div id="projects">
-        <Heading number="3" title="Projects" />
+        <Heading title="Projects" />
       </div>
 
       {projects.map((project, index) => (
