@@ -14,12 +14,6 @@
   min-width: 0;
 }
 
-/* Keep cards from forcing the grid wider than its available space. */
-.projects-main-container > .card-container {
-  width: 100%;
-  min-width: 0;
-}
-
 /* Tablet */
 @media screen and (max-width: 900px) {
   .projects-main-container {
