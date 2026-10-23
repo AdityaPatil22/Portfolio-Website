@@ -354,7 +354,7 @@
   gap: 0.35rem;
 }
 
-.about-socials a {
+.doc-page .about-socials a {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -363,6 +363,10 @@
   color: var(--text-primary);
   font-size: 0.82rem;
   border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+}
+
+.doc-page .about-socials a:hover {
   text-decoration: none;
 }
 
