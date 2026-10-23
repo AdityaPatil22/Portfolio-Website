@@ -95,7 +95,7 @@ function Experience() {
   return (
     <article className="doc-page experience-document">
       <div id="experience">
-        <Heading number="2" title="Employment History" />
+        <Heading title="Employment History" />
       </div>
 
       <p className="exp-intro">
