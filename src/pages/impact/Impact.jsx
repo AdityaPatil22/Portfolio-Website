@@ -50,7 +50,7 @@ function Impact() {
         <ImpactSectionHeading
           number="01"
           eyebrow="ON THE STAGE"
-          title="Talks &amp; conferences"
+          title="Talks & conferences"
           description="Lessons from production, practical AI, and the tools we use every day."
         />
         <div className="impact-talk-grid">
@@ -107,7 +107,7 @@ function Impact() {
         <ImpactSectionHeading
           number="03"
           eyebrow="NOTES FROM THE JOURNEY"
-          title="Writing &amp; ideas"
+          title="Writing & ideas"
           description="Technical deep dives, lessons learned, and perspectives worth sharing."
         />
         <div className="impact-article-grid">
