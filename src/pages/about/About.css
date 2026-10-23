@@ -365,7 +365,16 @@
   text-decoration: none;
 }
 
-.doc-page .about-socials a:hover {
+.doc-page .about-email-link {
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.about-email-link:hover {
+  text-decoration: none !important;
+}
+
+.about-socials a:hover {
   text-decoration: none;
 }
 
