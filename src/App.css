@@ -82,6 +82,16 @@ img {
   padding-bottom: 24px;
 }
 
+/* Minimal closing rule — no footer copy or metadata */
+.site-footer-rule {
+  width: calc(100% - 3rem);
+  max-width: 1400px;
+  height: 1px;
+  flex: 0 0 1px;
+  margin: 1.5rem auto 0;
+  background: var(--border-color);
+}
+
 /* Document primitives — shared by the content pages */
 .doc-page {
   max-width: 50rem;
@@ -118,25 +128,6 @@ img {
   font-weight: 500;
   color: var(--text-muted);
   margin-right: 0.7rem;
-}
-
-/* Colophon — the in-flow document footer */
-.doc-colophon {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.5rem;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 1.1rem 1.5rem 1.4rem;
-  border-top: 1px solid var(--border-color);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-.doc-colophon .colophon-note {
-  font-family: var(--font-body);
-  font-style: italic;
 }
 
 /* Selection */
@@ -179,6 +170,11 @@ img {
 
   .main-content {
     padding-bottom: 24px;
+  }
+
+  .site-footer-rule {
+    width: calc(100% - 2rem);
+    margin-top: 1rem;
   }
 }
 
