@@ -15,7 +15,7 @@
   --accent-color: #1b263b;
   --tag-bg: #eae6da;
   --rule-color: #c9c3b2;
-  --paper-dots: radial-gradient(circle, var(--rule-color) 1px, transparent 1.2px);
+  --paper-dots: radial-gradient(circle, #e3dfd5 0.8px, transparent 1.2px);
   --paper-dot-grid: 22px 22px;
 
   --font-display: "Source Serif 4", "Red Hat Display", Georgia, serif;
