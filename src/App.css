@@ -2,18 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables — Light only */
+/* CSS Variables — warm paper document theme */
 :root {
-  --bg-primary: #edf2f4;
-  --bg-secondary: #e2e6ea;
-  --card-bg: #ffffff;
-  --footer-bg: #e2e6ea;
+  --bg-primary: #f6f4ef;
+  --bg-secondary: #edeade;
+  --card-bg: #fdfcf8;
+  --footer-bg: #edeade;
   --text-primary: #2b2d42;
-  --text-secondary: #8d99ae;
-  --text-muted: #a0aab6;
-  --border-color: #c8cdd2;
+  --text-secondary: #5b616e;
+  --text-muted: #756f60;
+  --border-color: #d9d4c8;
   --accent-color: #1b263b;
-  --tag-bg: #dfe3e7;
+  --tag-bg: #eae6da;
+  --rule-color: #c9c3b2;
+  --paper-dots: radial-gradient(circle, var(--rule-color) 1px, transparent 1.2px);
+  --paper-dot-grid: 22px 22px;
+
+  --font-display: "Source Serif 4", "Red Hat Display", Georgia, serif;
+  --font-body: "Red Hat Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --header-height: 48px;
+  --toc-width: 224px;
+  --bottom-nav-height: 56px;
 }
 
 /* Global Styles */
@@ -28,16 +39,18 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg-primary);
+  background-color: var(--bg-primary);
+  background-image: var(--paper-dots);
+  background-size: var(--paper-dot-grid);
   color: var(--text-primary);
-  font-family: "Red Hat Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Headings use Red Hat Display */
+/* Headings use the document serif */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-display);
 }
 
 body::-webkit-scrollbar {
@@ -67,7 +80,79 @@ img {
   flex: 1;
   position: relative;
   z-index: 1;
-  padding-bottom: 100px;
+  padding-top: calc(var(--header-height) + 1.5rem);
+  padding-bottom: 24px;
+}
+
+@media screen and (min-width: 900px) {
+  .main-content {
+    margin-left: var(--toc-width);
+    padding-bottom: 48px;
+  }
+}
+
+/* Document primitives — shared by the RFC pages */
+
+.doc-page {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.doc-page a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.doc-page a:hover {
+  color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
+}
+
+.doc-subheading {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 2.6rem 0 0.9rem;
+  line-height: 1.3;
+}
+
+.doc-subheading .secnum {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-right: 0.7rem;
+}
+
+/* Colophon — the in-flow document footer */
+.doc-colophon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.1rem 1.5rem 1.4rem;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.doc-colophon .colophon-note {
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+@media screen and (min-width: 900px) {
+  .doc-colophon {
+    margin-left: var(--toc-width);
+  }
 }
 
 /* Selection */
@@ -82,6 +167,12 @@ img {
   outline-offset: 2px;
 }
 
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 /* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
@@ -98,12 +189,15 @@ img {
   button, a, input, select, textarea {
     min-height: 44px;
   }
-
 }
 
 @media screen and (max-width: 480px) {
   html {
     font-size: 14px;
+  }
+
+  .doc-page {
+    padding: 0 1.25rem;
   }
 }
 

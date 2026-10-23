@@ -2,99 +2,66 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 220px);
   padding: 40px 20px;
-  font-family: "Red Hat Text", sans-serif;
 }
 
-.not-found-content {
-  text-align: center;
-  max-width: 500px;
+.nf-document {
+  max-width: 26rem;
+  width: 100%;
 }
 
-.error-code {
-  font-size: 150px;
-  font-weight: 700;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--text-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
+.nf-head {
+  border-top: 2px solid var(--text-primary);
+  border-bottom: 1px solid var(--rule-color);
+  padding: 1rem 0 0.9rem;
+  margin-bottom: 2rem;
 }
 
-.error-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-}
-
-.error-description {
-  font-size: 16px;
-  line-height: 1.7;
+.nf-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  margin-bottom: 40px;
+  margin: 0 0 0.35rem;
+  line-height: 1.6;
 }
 
-.error-actions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+.nf-meta:last-child {
+  margin-bottom: 0;
 }
 
-.error-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  font-size: 15px;
-  font-weight: 500;
-  font-family: inherit;
-  border-radius: 12px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.error-btn.primary {
-  background: var(--accent-color);
-  color: white;
-  border: none;
-}
-
-.error-btn.primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-.error-btn.secondary {
-  background: var(--bg-secondary);
+.nf-title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.4rem + 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
   color: var(--text-primary);
-  border: none;
+  margin: 0 0 1rem;
 }
 
-.error-btn.secondary:hover {
-  background: var(--card-bg);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.nf-body {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0 0 2rem;
 }
 
-@media screen and (max-width: 480px) {
-  .error-code {
-    font-size: 100px;
-  }
+.nf-action {
+  text-align: center;
+  margin: 0;
+}
 
-  .error-title {
-    font-size: 24px;
-  }
+.nf-action a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
 
-  .error-actions {
-    flex-direction: column;
-  }
-
-  .error-btn {
-    width: 100%;
-    justify-content: center;
-  }
+.nf-action a:hover {
+  color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
 }

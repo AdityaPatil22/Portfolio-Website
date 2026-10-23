@@ -1,22 +1,35 @@
-.section-heading {
+.doc-section-heading {
+  grid-column: 1 / -1;
+  margin: 0 0 2rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--rule-color);
+}
+
+.doc-section-number {
   display: block;
-  width: 100%;
-  text-align: center;
-  font-size: clamp(32px, 6vw, 48px);
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 700;
-  color: #ffffff;
-  padding: 0 20px;
-  box-sizing: border-box;
-  letter-spacing: -0.5px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.doc-section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 1.25rem + 2vw, 2.4rem);
+  line-height: 1.15;
+  color: var(--text-primary);
   margin: 0;
 }
 
+/* Section anchors clear the fixed running header */
 #skills,
 #experience,
 #projects,
-#about {
-  scroll-margin-top: 20px;
+#about,
+#impact {
+  scroll-margin-top: calc(var(--header-height) + 16px);
   position: relative;
   z-index: 1;
 }

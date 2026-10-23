@@ -1,313 +1,111 @@
-.impact-page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 24px 80px;
+.impact-document {
+  max-width: 50rem;
 }
 
-/* Subtitle */
-
-.impact-subtitle {
-  text-align: center;
-  font-size: 24px;
-  color: var(--text-secondary);
-  max-width: 800px;
-  margin: 0 auto 48px;
+.impact-intro {
+  font-size: 1.02rem;
   line-height: 1.6;
-}
-
-/* Metrics */
-
-.impact-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 72px;
-}
-
-.impact-metric {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 24px 16px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.impact-metric:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-
-.impact-metric-value {
-  font-family: "Red Hat Display", sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--accent-color);
-  display: block;
-  line-height: 1;
-}
-
-.impact-metric-label {
-  font-size: 13px;
   color: var(--text-secondary);
-  margin-top: 8px;
-  display: block;
+  margin: 0 0 2rem;
+  max-width: 66ch;
 }
 
-/* Sections */
+/* References — hanging-indent citations */
 
-.impact-section {
-  margin-bottom: 72px;
-}
-
-.impact-section:last-child {
-  margin-bottom: 0;
-}
-
-/* Section heading */
-
-.impact-section-header {
-  margin-bottom: 28px;
-}
-
-.impact-section-header h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 6px;
-}
-
-.impact-section-header p {
-  font-size: 15px;
-  color: var(--text-secondary);
+.ref-list {
+  list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+.ref-entry {
+  position: relative;
+  padding-left: 2.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.ref-marker {
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.ref-citation {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.ref-note {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0.2rem 0 0;
+}
+
+/* Contributors — ruled list */
+
+.contrib-lead {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+}
+
+.contrib-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule-color);
+}
+
+.contrib-entry {
+  padding: 0.95rem 0 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contrib-repo {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0 0 0.25rem;
+}
+
+.contrib-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.3rem;
   line-height: 1.5;
 }
 
-/* Grids */
-
-.impact-featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.impact-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.impact-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* Featured cards */
-
-.impact-featured-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-top: 3px solid var(--accent-color);
-  border-radius: 16px;
-  padding: 32px 28px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.impact-featured-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-.impact-featured-emoji {
-  font-size: 28px;
-  display: block;
-  margin-bottom: 14px;
-}
-
-.impact-featured-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 10px;
-}
-
-.impact-featured-card p {
-  font-size: 14px;
+.contrib-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
   color: var(--text-secondary);
-  line-height: 1.6;
+  margin: 0 0 0.4rem;
+}
+
+.contrib-tags {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
   margin: 0;
-}
-
-/* Generic card */
-
-.impact-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.impact-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-}
-
-.impact-card-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 8px;
-  line-height: 1.4;
-}
-
-.impact-card-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0;
-  flex: 1;
-}
-
-/* Card footer */
-
-.impact-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-/* Badge */
-
-.impact-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 12px;
-  border-radius: 100px;
-  background: var(--tag-bg);
-  color: var(--text-secondary);
-  width: fit-content;
-  margin-bottom: 12px;
-}
-
-.impact-badge-accent {
-  background: var(--accent-color);
-  color: var(--bg-primary);
-}
-
-/* Tags */
-
-.impact-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.impact-tag {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: var(--tag-bg);
-  color: var(--text-secondary);
-}
-
-/* Button */
-
-.impact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  background: transparent;
-  transition: border-color 0.2s, color 0.2s;
-  text-decoration: none;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.impact-card > .impact-btn {
-  margin-top: 16px;
-}
-
-.impact-btn:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
 }
 
 /* Responsive */
 
-@media screen and (max-width: 768px) {
-  .impact-page {
-    padding: 40px 20px 60px;
+@media screen and (max-width: 600px) {
+  .ref-entry {
+    padding-left: 2.1rem;
   }
 
-  .impact-metrics {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 56px;
-  }
-
-  .impact-featured-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .impact-grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .impact-section {
-    margin-bottom: 56px;
-  }
-
-  .impact-featured-card {
-    padding: 24px 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .impact-page {
-    padding: 24px 16px 50px;
-  }
-
-  .impact-metric {
-    padding: 20px 12px;
-  }
-
-  .impact-metric-value {
-    font-size: 28px;
-  }
-
-  .impact-grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .impact-card {
-    padding: 20px;
-  }
-
-  .impact-section {
-    margin-bottom: 48px;
-  }
-
-  .impact-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
+  .ref-citation {
+    font-size: 0.95rem;
   }
 }

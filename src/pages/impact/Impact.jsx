@@ -1,153 +1,99 @@
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
 import Heading from "../../components/heading/Heading";
-import {
-  metrics,
-  featuredItems,
-  talks,
-  contributions,
-  articles,
-} from "./impactData";
+import { talks, contributions, articles } from "./impactData";
 import "./Impact.css";
 
-const reveal = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: "easeOut", delay },
-  viewport: { once: true, margin: "-50px" },
-});
-
-function SectionHeading({ title, subtitle }) {
+function RefEntry({ num, source, title, note, href }) {
   return (
-    <motion.div className="impact-section-header" {...reveal()}>
-      <h2>{title}</h2>
-      {subtitle && <p>{subtitle}</p>}
-    </motion.div>
+    <li className="ref-entry">
+      <p className="ref-citation">
+        <span className="ref-marker">[{num}]</span>
+        Patil, A.,{" "}
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          &ldquo;{title}&rdquo;
+        </a>
+        , {source}.
+      </p>
+      <p className="ref-note">{note}</p>
+    </li>
   );
 }
 
 function Impact() {
+  // Reference numbering is continuous across the two reference sections,
+  // as in an RFC.
+  let refNum = 0;
+
   return (
-    <>
-      <Heading title="Impact" />
-      <section className="impact-page">
-        <motion.p className="impact-subtitle" {...reveal(0.2)}>
-          Sharing knowledge, contributing to open source, and helping build the developer community.
-        </motion.p>
+    <article className="doc-page impact-document">
+      <div id="impact">
+        <Heading number="5" title="Impact" />
+      </div>
 
-        <div className="impact-section">
-          <SectionHeading title="Featured Impact" />
-          <div className="impact-featured-grid">
-            {featuredItems.map((f, i) => (
-              <motion.div
-                key={f.title}
-                className="impact-featured-card"
-                {...reveal(0.1 + i * 0.1)}
-              >
-                <span className="impact-featured-emoji">{f.emoji}</span>
-                <h3>{f.title}</h3>
-                <p>{f.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <p className="impact-intro">
+        Sharing knowledge, contributing to open source, and helping build the
+        developer community.
+      </p>
 
-        <div className="impact-section">
-          <SectionHeading
-            title="Conference Talks"
-            subtitle="Sharing engineering lessons with the open-source community."
-          />
-          <div className="impact-grid-2">
-            {talks.map((talk, i) => (
-              <motion.div
-                key={talk.title}
-                className="impact-card"
-                {...reveal(0.1 + i * 0.08)}
-              >
-                <span className="impact-badge">{talk.conference}</span>
-                <h3 className="impact-card-title">{talk.title}</h3>
-                <p className="impact-card-desc">{talk.description}</p>
-                <a
-                  href={talk.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="impact-btn"
-                >
-                  View Details <ExternalLink size={12} />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div className="impact-section">
-          <SectionHeading
-            title="Open Source Contributions"
-            subtitle="Improving developer tooling through community contributions."
-          />
-          <div className="impact-grid-3">
-            {contributions.map((c, i) => (
-              <motion.div
-                key={c.title}
-                className="impact-card"
-                {...reveal(0.1 + i * 0.1)}
-              >
-                <span className="impact-badge impact-badge-accent">
-                  <Github size={12} /> {c.repo}
-                </span>
-                <h3 className="impact-card-title">{c.title}</h3>
-                <p className="impact-card-desc">{c.description}</p>
-                <div className="impact-card-footer">
-                  <div className="impact-tags">
-                    {c.tags.map((tag) => (
-                      <span key={tag} className="impact-tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={c.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="impact-btn"
-                  >
-                    {c.linkLabel} <ExternalLink size={12} />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div className="impact-section">
-          <SectionHeading
-            title="Technical Writing"
-            subtitle="Sharing lessons learned through articles and tutorials."
-          />
-          <div className="impact-grid-2">
-            {articles.map((a, i) => (
-              <motion.div
-                key={a.title}
-                className="impact-card"
-                {...reveal(0.1 + i * 0.08)}
-              >
-                <span className="impact-badge">{a.platform}</span>
-                <h3 className="impact-card-title">{a.title}</h3>
-                <p className="impact-card-desc">{a.description}</p>
-                <a
-                  href={a.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="impact-btn"
-                >
-                  Read Article <ExternalLink size={12} />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <section>
+        <h2 className="doc-subheading">
+          <span className="secnum">5.1</span>References (Normative)
+        </h2>
+        <ol className="ref-list">
+          {talks.map((talk) => (
+            <RefEntry
+              key={talk.title}
+              num={++refNum}
+              source={talk.conference}
+              title={talk.title}
+              note={talk.description}
+              href={talk.href}
+            />
+          ))}
+        </ol>
       </section>
-    </>
+
+      <section>
+        <h2 className="doc-subheading">
+          <span className="secnum">5.2</span>References (Informative)
+        </h2>
+        <ol className="ref-list">
+          {articles.map((article) => (
+            <RefEntry
+              key={article.title}
+              num={++refNum}
+              source={article.platform}
+              title={article.title}
+              note={article.description}
+              href={article.href}
+            />
+          ))}
+        </ol>
+      </section>
+
+      <section>
+        <h2 className="doc-subheading">
+          <span className="secnum">5.3</span>Contributors
+        </h2>
+        <p className="contrib-lead">
+          Fixes and improvements contributed upstream.
+        </p>
+        <ul className="contrib-list">
+          {contributions.map((c) => (
+            <li className="contrib-entry" key={c.href}>
+              <p className="contrib-repo">{c.repo}</p>
+              <p className="contrib-title">{c.title}</p>
+              <p className="contrib-desc">
+                {c.description}{" "}
+                <a href={c.href} target="_blank" rel="noopener noreferrer">
+                  {c.linkLabel}
+                </a>
+              </p>
+              <p className="contrib-tags">{c.tags.join(" / ")}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
   );
 }
 

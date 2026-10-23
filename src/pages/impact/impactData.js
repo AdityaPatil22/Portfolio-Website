@@ -1,28 +1,3 @@
-export const metrics = [
-  { value: "4", label: "Conference Talks" },
-  { value: "3+", label: "Open Source Contributions" },
-  { value: "5", label: "Technical Articles" },
-  { value: "2", label: "International Conferences" },
-];
-
-export const featuredItems = [
-  {
-    title: "International Speaker",
-    description:
-      "Presented three technical talks across DevConf.cz and Flock to Fedora covering web performance, Fedora, and documentation.",
-  },
-  {
-    title: "Open Source",
-    description:
-      "Contributed fixes and improvements to Feast, covering frontend, Helm deployments, and project management.",
-  },
-  {
-    title: "Technical Writing",
-    description:
-      "Published articles covering AI systems, web engineering, developer tooling, and software architecture.",
-  },
-];
-
 export const talks = [
   {
     title:

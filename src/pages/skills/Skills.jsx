@@ -122,11 +122,11 @@ function Skills() {
         parallaxOn={true}
       />
       
-      <div id="skills">
-        <Heading title="Skills" />
-      </div>
-
       <div className="skills-page-container">
+        <div id="skills">
+          <Heading number="4" title="Skills" />
+        </div>
+
         {skillCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="skill-category">
             <h2 className="category-title">{category.title}</h2>

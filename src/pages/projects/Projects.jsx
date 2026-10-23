@@ -107,13 +107,12 @@ function Projects() {
   ];
 
   return (
-    <>
+    <div className="projects-main-container">
       <div id="projects">
-        <Heading title="Projects" />
+        <Heading number="3" title="Projects" />
       </div>
 
-      <div className="projects-main-container">
-        {projects.map((project, index) => (
+      {projects.map((project, index) => (
           <Card
             key={index}
             projectTitle={project.title}
@@ -124,8 +123,7 @@ function Projects() {
             githubUrl={project.githubUrl}
           />
         ))}
-      </div>
-    </>
+    </div>
   );
 }
 
